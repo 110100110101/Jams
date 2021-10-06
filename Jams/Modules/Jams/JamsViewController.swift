@@ -19,6 +19,7 @@ class JamsViewController: UIViewController, UISearchBarDelegate {
         super.viewDidLoad()
      
         self.navigationItem.searchController = self.searchController
+        self.searchController.searchBar.delegate = self
     }
     
     // MARK: - UISearchBarDelegate Methods
