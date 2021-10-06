@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		2DA7FCDD270DCCA300F7920C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA7FCDC270DCCA300F7920C /* AppDelegate.swift */; };
-		2DA7FCDF270DCCA300F7920C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA7FCDE270DCCA300F7920C /* SceneDelegate.swift */; };
 		2DA7FCE1270DCCA300F7920C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA7FCE0270DCCA300F7920C /* ViewController.swift */; };
 		2DA7FCE4270DCCA300F7920C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7FCE2270DCCA300F7920C /* Main.storyboard */; };
 		2DA7FCE6270DCCA400F7920C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7FCE5270DCCA400F7920C /* Assets.xcassets */; };
@@ -19,7 +18,6 @@
 /* Begin PBXFileReference section */
 		2DA7FCD9270DCCA300F7920C /* Jams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA7FCDC270DCCA300F7920C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2DA7FCDE270DCCA300F7920C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2DA7FCE0270DCCA300F7920C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2DA7FCE3270DCCA300F7920C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2DA7FCE5270DCCA400F7920C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,7 +58,6 @@
 			children = (
 				2DA7FCF0270DCE7400F7920C /* Modules */,
 				2DA7FCDC270DCCA300F7920C /* AppDelegate.swift */,
-				2DA7FCDE270DCCA300F7920C /* SceneDelegate.swift */,
 				2DA7FCE0270DCCA300F7920C /* ViewController.swift */,
 				2DA7FCE2270DCCA300F7920C /* Main.storyboard */,
 				2DA7FCE5270DCCA400F7920C /* Assets.xcassets */,
@@ -159,7 +156,6 @@
 				2DA7FCE1270DCCA300F7920C /* ViewController.swift in Sources */,
 				2DA7FCDD270DCCA300F7920C /* AppDelegate.swift in Sources */,
 				2DA7FCF4270DD05500F7920C /* HomeTabBarController.swift in Sources */,
-				2DA7FCDF270DCCA300F7920C /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
