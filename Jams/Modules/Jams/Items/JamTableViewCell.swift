@@ -7,6 +7,16 @@
 
 import UIKit
 
+protocol JamTableViewCellDelegate: AnyObject {
+    
+    /**
+     Informs the delegate that the given instance's purchase button has been tapped
+     
+     - parameter cell: Instance where the event did just happened
+     */
+    func jamTableViewCellButtonPurchaseDidTap(_ cell: JamTableViewCell)
+}
+
 class JamTableViewCell: UITableViewCell {
     
     // MARK: - Outlets
@@ -15,6 +25,13 @@ class JamTableViewCell: UITableViewCell {
     @IBOutlet private var labelTrackName: UILabel!
     @IBOutlet private var labelGenre: UILabel!
     @IBOutlet private var buttonPurchase: UIButton! // This button also doubles as the price tag
+    
+    // MARK: - Fields
+    
+    /**
+     Delegate where all the "important" events would be routed/handled
+     */
+    public weak var delegate: JamTableViewCellDelegate?
     
     // MARK: - View Lifecycle
     
