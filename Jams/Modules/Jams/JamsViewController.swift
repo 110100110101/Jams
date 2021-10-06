@@ -22,6 +22,8 @@ class JamsViewController: UIViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
      
+        self.navigationItem.title = "Jams"
+        
         self.navigationItem.searchController = self.searchController
         self.searchController.searchBar.delegate = self
     }
