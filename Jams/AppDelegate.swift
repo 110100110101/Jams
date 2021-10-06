@@ -17,9 +17,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let frame = UIScreen.main.bounds
         self.window = UIWindow(frame: frame)
         
-        let homeTabBarController = HomeTabBarController()
+        let jamsViewController = JamsViewController()
+        jamsViewController.navigationItem.title = "Jams"
         
-        self.window?.rootViewController = homeTabBarController
+        let navigationController = UINavigationController(rootViewController: jamsViewController)
+        navigationController.tabBarItem.title = "Jams"
+        
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = [navigationController]
+        
+        self.window?.rootViewController = tabBarController
         
         self.window?.makeKeyAndVisible()
         
