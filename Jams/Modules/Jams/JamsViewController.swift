@@ -7,7 +7,7 @@
 
 import UIKit
 
-class JamsViewController: UIViewController {
+class JamsViewController: UIViewController, UISearchBarDelegate {
     
     // MARK: - Fields
     
@@ -19,5 +19,11 @@ class JamsViewController: UIViewController {
         super.viewDidLoad()
      
         self.navigationItem.searchController = self.searchController
+    }
+    
+    // MARK: - UISearchBarDelegate Methods
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // TODO: Search
     }
 }
