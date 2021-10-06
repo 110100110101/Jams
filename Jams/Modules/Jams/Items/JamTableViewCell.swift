@@ -14,7 +14,7 @@ class JamTableViewCell: UITableViewCell {
     @IBOutlet private var imageViewTrackArtwork: UIImageView!
     @IBOutlet private var labelTrackName: UILabel!
     @IBOutlet private var labelGenre: UILabel!
-    @IBOutlet private var buttonPurchase: UIButton! // This button also serves the price tag for the track
+    @IBOutlet private var buttonPurchase: UIButton! // This button also doubles as the price tag
     
     // MARK: - View Lifecycle
     
@@ -28,16 +28,34 @@ class JamTableViewCell: UITableViewCell {
         self.labelGenre.text = nil
         self.buttonPurchase.setTitle(nil, for: .normal)
     }
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    // MARK: - Public Methods
+    
+    /**
+     Sets the artwork
+     
+     - parameter url: URL where the artwork resides. Specify `nil` if you want the view to use placeholder
+     
+     - Note: Placeholder would be also served while the view loads the artwork from the `url`. If an error has occurred, it would also use the placeholder.
+     */
+    public func setTrackArtwork(url: URL?) {
+        // TODO: Set the track's artwork using the provided URL, if possible
     }
     
+    public func setTrackName(_ name: String) {
+        self.labelTrackName.text = name
+    }
+    
+    public func setGenre(_ genre: String) {
+        self.labelGenre.text = genre
+    }
+    
+    /**
+     Assigns price to the track
+     
+     - Note: Argument passed is rendered as-is, so format it before assigning it here.
+     */
+    public func setPrice(_ price: String) {
+        self.buttonPurchase.setTitle(price, for: .normal)
+    }
 }
