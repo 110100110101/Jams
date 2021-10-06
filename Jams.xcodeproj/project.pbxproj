@@ -12,7 +12,6 @@
 		2DA7FCE4270DCCA300F7920C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7FCE2270DCCA300F7920C /* Main.storyboard */; };
 		2DA7FCE6270DCCA400F7920C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7FCE5270DCCA400F7920C /* Assets.xcassets */; };
 		2DA7FCE9270DCCA400F7920C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7FCE7270DCCA400F7920C /* LaunchScreen.storyboard */; };
-		2DA7FCF4270DD05500F7920C /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA7FCF2270DD05500F7920C /* HomeTabBarController.swift */; };
 		2DA7FCF9270DD3BE00F7920C /* JamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA7FCF7270DD3BE00F7920C /* JamsViewController.swift */; };
 		2DA7FCFA270DD3BE00F7920C /* JamsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7FCF8270DD3BE00F7920C /* JamsViewController.xib */; };
 /* End PBXBuildFile section */
@@ -25,7 +24,6 @@
 		2DA7FCE5270DCCA400F7920C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2DA7FCE8270DCCA400F7920C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2DA7FCEA270DCCA400F7920C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2DA7FCF2270DD05500F7920C /* HomeTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		2DA7FCF7270DD3BE00F7920C /* JamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JamsViewController.swift; sourceTree = "<group>"; };
 		2DA7FCF8270DD3BE00F7920C /* JamsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JamsViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -74,18 +72,9 @@
 		2DA7FCF0270DCE7400F7920C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				2DA7FCF1270DCE7B00F7920C /* Home (Tab) */,
 				2DA7FCF6270DD39E00F7920C /* Jams */,
 			);
 			path = Modules;
-			sourceTree = "<group>";
-		};
-		2DA7FCF1270DCE7B00F7920C /* Home (Tab) */ = {
-			isa = PBXGroup;
-			children = (
-				2DA7FCF2270DD05500F7920C /* HomeTabBarController.swift */,
-			);
-			path = "Home (Tab)";
 			sourceTree = "<group>";
 		};
 		2DA7FCF6270DD39E00F7920C /* Jams */ = {
@@ -171,7 +160,6 @@
 				2DA7FCE1270DCCA300F7920C /* ViewController.swift in Sources */,
 				2DA7FCF9270DD3BE00F7920C /* JamsViewController.swift in Sources */,
 				2DA7FCDD270DCCA300F7920C /* AppDelegate.swift in Sources */,
-				2DA7FCF4270DD05500F7920C /* HomeTabBarController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
