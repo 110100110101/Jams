@@ -9,6 +9,10 @@ import UIKit
 
 class JamsViewController: UIViewController, UISearchBarDelegate {
     
+    // MARK: - Outlets
+    
+    @IBOutlet private var tableViewJams: UITableView!
+    
     // MARK: - Fields
     
     private let searchController = UISearchController(searchResultsController: nil)
