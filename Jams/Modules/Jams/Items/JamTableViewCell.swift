@@ -8,6 +8,13 @@
 import UIKit
 
 class JamTableViewCell: UITableViewCell {
+    
+    // MARK: - Outlets
+    
+    @IBOutlet private var imageViewTrackArtwork: UIImageView!
+    @IBOutlet private var labelTrackName: UILabel!
+    @IBOutlet private var labelGenre: UILabel!
+    @IBOutlet private var buttonPurchase: UIButton! // This button also serves the price tag for the track
 
     override func awakeFromNib() {
         super.awakeFromNib()
