@@ -18,13 +18,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: frame)
         
         let jamsViewController = JamsViewController()
-        jamsViewController.navigationItem.title = "Jams"
+        let jamsNavigationController = UINavigationController(rootViewController: jamsViewController)
+        jamsNavigationController.tabBarItem.title = "Jams"
         
-        let navigationController = UINavigationController(rootViewController: jamsViewController)
-        navigationController.tabBarItem.title = "Jams"
+        let myJamsViewController = MyJamsViewController()
+        let myJamsNavigationController = UINavigationController(rootViewController: myJamsViewController)
+        myJamsNavigationController.tabBarItem.title = "My Jams"
         
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [navigationController]
+        tabBarController.viewControllers = [jamsNavigationController, myJamsNavigationController]
         
         self.window?.rootViewController = tabBarController
         
