@@ -26,6 +26,8 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
         
         self.navigationItem.searchController = self.searchController
         self.searchController.searchBar.delegate = self
+        self.searchController.searchBar.tintColor = UIColor.systemPink
+        self.searchController.searchBar.placeholder = "Find Your Jams!"
         
         self.initializeTableViewJamsProperties()
     }
