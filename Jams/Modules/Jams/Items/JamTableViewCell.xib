@@ -24,14 +24,14 @@
                             <constraint firstAttribute="height" constant="100" id="l3d-Vz-Tl7"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZN-eu-kLl">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZN-eu-kLl">
                         <rect key="frame" x="132" y="8" width="64.5" height="31.5"/>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgA-Lt-SlQ">
-                        <rect key="frame" x="132" y="41.5" width="31" height="14.5"/>
+                        <rect key="frame" x="132" y="41.5" width="348" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
@@ -52,13 +52,26 @@
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nk-8T-Lxg">
+                        <rect key="frame" x="200.5" y="9" width="30" height="30"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="30" id="bxG-cV-PzC"/>
+                            <constraint firstAttribute="width" constant="30" id="tO0-fc-nhG"/>
+                        </constraints>
+                        <color key="tintColor" systemColor="systemPinkColor"/>
+                        <state key="normal" image="heart" catalog="system"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="9V1-Ts-u8m" firstAttribute="bottom" secondItem="odZ-lu-O1v" secondAttribute="bottom" id="0Mg-jr-NwN"/>
                     <constraint firstItem="DgA-Lt-SlQ" firstAttribute="leading" secondItem="odZ-lu-O1v" secondAttribute="trailing" constant="16" id="11f-qv-l2F"/>
                     <constraint firstAttribute="bottom" secondItem="odZ-lu-O1v" secondAttribute="bottom" constant="8" id="5Pc-8K-f2B"/>
                     <constraint firstItem="1ZN-eu-kLl" firstAttribute="top" secondItem="odZ-lu-O1v" secondAttribute="top" id="8iS-pU-7dM"/>
+                    <constraint firstItem="8nk-8T-Lxg" firstAttribute="leading" secondItem="1ZN-eu-kLl" secondAttribute="trailing" constant="4" id="I2O-Ux-3sF"/>
                     <constraint firstItem="odZ-lu-O1v" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="I91-Wm-3p6"/>
+                    <constraint firstItem="8nk-8T-Lxg" firstAttribute="centerY" secondItem="1ZN-eu-kLl" secondAttribute="centerY" id="KJP-lt-r2Y"/>
+                    <constraint firstAttribute="trailing" secondItem="DgA-Lt-SlQ" secondAttribute="trailing" constant="16" id="ZZq-8B-vc7"/>
+                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8nk-8T-Lxg" secondAttribute="trailing" constant="16" id="kV6-U8-rr2"/>
                     <constraint firstItem="DgA-Lt-SlQ" firstAttribute="top" secondItem="1ZN-eu-kLl" secondAttribute="bottom" constant="2" id="mmr-Gu-NDU"/>
                     <constraint firstItem="1ZN-eu-kLl" firstAttribute="leading" secondItem="odZ-lu-O1v" secondAttribute="trailing" constant="16" id="nr7-ug-Qv5"/>
                     <constraint firstItem="9V1-Ts-u8m" firstAttribute="leading" secondItem="odZ-lu-O1v" secondAttribute="trailing" constant="16" id="sAR-Hn-da5"/>
@@ -67,6 +80,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="buttonFavorite" destination="8nk-8T-Lxg" id="G1b-Rf-MCz"/>
                 <outlet property="buttonPurchase" destination="9V1-Ts-u8m" id="Swq-d9-6cd"/>
                 <outlet property="imageViewTrackArtwork" destination="odZ-lu-O1v" id="YRA-Im-jBO"/>
                 <outlet property="labelGenre" destination="DgA-Lt-SlQ" id="2Ve-Rj-3yP"/>
@@ -76,6 +90,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="heart" catalog="system" width="128" height="109"/>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
