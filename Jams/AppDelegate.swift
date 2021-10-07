@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let jamsNavigationController = UINavigationController(rootViewController: jamsViewController)
         jamsNavigationController.tabBarItem.title = "Jams"
         
-        let jamsImage = UIImage(systemName: "music.quarternote.3")
+        let jamsImage = UIImage(systemName: "play.tv.fill")
         jamsNavigationController.tabBarItem.image = jamsImage
         
         let myJamsViewController = MyJamsViewController()
