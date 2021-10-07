@@ -14,6 +14,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
+        UIButton.appearance().tintColor = .systemPink
+        UISearchBar.appearance().tintColor = .systemPink
+        
         let frame = UIScreen.main.bounds
         self.window = UIWindow(frame: frame)
         
