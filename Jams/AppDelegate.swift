@@ -25,9 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let jamsNavigationController = UINavigationController(rootViewController: jamsViewController)
         jamsNavigationController.tabBarItem.title = "Jams"
         
+        let jamsImage = UIImage(systemName: "music.quarternote.3")
+        jamsNavigationController.tabBarItem.image = jamsImage
+        
         let myJamsViewController = MyJamsViewController()
         let myJamsNavigationController = UINavigationController(rootViewController: myJamsViewController)
         myJamsNavigationController.tabBarItem.title = "My Jams"
+        
+        let myJamsImage = UIImage(systemName: "heart.fill")
+        myJamsNavigationController.tabBarItem.image = myJamsImage
         
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = [jamsNavigationController, myJamsNavigationController]
