@@ -10,6 +10,13 @@ import UIKit
 protocol JamTableViewCellDelegate: AnyObject {
     
     /**
+     Informs the delegate that the given instance's favorite button has been tapped
+     
+     - parameter cell: Instance where the event did just happened
+     */
+    func jamTableViewCellButtonFavoriteDidTap(_ cell: JamTableViewCell)
+    
+    /**
      Informs the delegate that the given instance's purchase button has been tapped
      
      - parameter cell: Instance where the event did just happened
