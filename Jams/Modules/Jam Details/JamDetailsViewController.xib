@@ -23,7 +23,7 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FCW-rI-8V0">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="194"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="727.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOe-Mo-qP2" userLabel="Header Section">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="194"/>
@@ -105,12 +105,52 @@
                                         <constraint firstItem="Dbw-ky-ylo" firstAttribute="leading" secondItem="vOe-Mo-qP2" secondAttribute="leading" constant="16" id="jbU-Yj-XYu"/>
                                     </constraints>
                                 </view>
+                                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YjP-XW-MIJ" userLabel="Preview Section">
+                                    <rect key="frame" x="0.0" y="194" width="414" height="221"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="id9-q7-wA0">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="221"/>
+                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        </view>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstItem="id9-q7-wA0" firstAttribute="leading" secondItem="YjP-XW-MIJ" secondAttribute="leading" id="C3y-OX-y1g"/>
+                                        <constraint firstItem="id9-q7-wA0" firstAttribute="top" secondItem="YjP-XW-MIJ" secondAttribute="top" id="GFc-yZ-SMB"/>
+                                        <constraint firstAttribute="bottom" secondItem="id9-q7-wA0" secondAttribute="bottom" id="qVf-Ws-XJ5"/>
+                                        <constraint firstAttribute="trailing" secondItem="id9-q7-wA0" secondAttribute="trailing" id="vSn-mw-Iov"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f03-M5-hb4" userLabel="Description Section">
+                                    <rect key="frame" x="0.0" y="194" width="414" height="533.5"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWo-iP-ls9">
+                                            <rect key="frame" x="16" y="16" width="382" height="501.5"/>
+                                            <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam orci ligula, elementum et tincidunt eu, vulputate in nunc. Vestibulum ultrices auctor sem blandit finibus. Curabitur quis vehicula urna, non bibendum ipsum. Integer purus mauris, facilisis in varius quis, porttitor a augue. Donec luctus dui magna, at ullamcorper ipsum vehicula ac. Vivamus sodales leo quis nulla euismod tincidunt. Morbi rutrum magna sem, at tristique ligula feugiat suscipit. Aliquam hendrerit vestibulum placerat. Donec in pretium orci. Fusce rutrum, leo eget pulvinar placerat, purus neque auctor sem, et gravida est tellus eu erat. Quisque vel sem interdum ante placerat dignissim et in erat. Vivamus eu leo tempus, posuere arcu ac, gravida elit. Nam sed facilisis nibh, non posuere ex. Nam nec tortor vitae tellus cursus auctor.
+
+Duis scelerisque eget elit eget sodales. Pellentesque sapien massa, egestas quis dolor sit amet, consequat auctor velit. Etiam vitae lectus faucibus, pellentesque justo ut, ultricies nulla. Nulla consectetur non nunc vitae congue. Pellentesque rhoncus dictum dapibus. Donec accumsan orci lorem, at sagittis magna luctus vel. Donec et consectetur orci, sed efficitur lorem. Nullam molestie arcu ut consequat dapibus. Nulla efficitur faucibus leo at ullamcorper.
+
+</mutableString>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="vWo-iP-ls9" secondAttribute="bottom" constant="16" id="E7F-QC-hM4"/>
+                                        <constraint firstItem="vWo-iP-ls9" firstAttribute="top" secondItem="f03-M5-hb4" secondAttribute="top" constant="16" id="Mcs-Sb-Ki6"/>
+                                        <constraint firstItem="vWo-iP-ls9" firstAttribute="leading" secondItem="f03-M5-hb4" secondAttribute="leading" constant="16" id="efg-Oi-iJt"/>
+                                        <constraint firstAttribute="trailing" secondItem="vWo-iP-ls9" secondAttribute="trailing" constant="16" id="yM4-Js-o58"/>
+                                    </constraints>
+                                </view>
                             </subviews>
                         </stackView>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="bottom" secondItem="FCW-rI-8V0" secondAttribute="bottom" id="4NV-RR-slx"/>
                         <constraint firstItem="FCW-rI-8V0" firstAttribute="leading" secondItem="gMY-JO-oRP" secondAttribute="leading" id="B6u-qX-J6k"/>
+                        <constraint firstItem="YjP-XW-MIJ" firstAttribute="height" secondItem="gMY-JO-oRP" secondAttribute="height" multiplier="0.27" id="EQs-Pd-tDd"/>
                         <constraint firstItem="FCW-rI-8V0" firstAttribute="top" secondItem="gMY-JO-oRP" secondAttribute="top" id="Khb-9c-IQp"/>
                         <constraint firstAttribute="trailing" secondItem="FCW-rI-8V0" secondAttribute="trailing" id="WsW-An-3bX"/>
                         <constraint firstItem="FCW-rI-8V0" firstAttribute="width" secondItem="gMY-JO-oRP" secondAttribute="width" id="abq-gG-oMC"/>
