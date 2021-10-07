@@ -26,6 +26,8 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
         
         self.navigationItem.searchController = self.searchController
         self.searchController.searchBar.delegate = self
+        
+        self.initializeTableViewJamsProperties()
     }
     
     // MARK: - UISearchBarDelegate Methods
@@ -46,5 +48,16 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         return UITableViewCell() // TODO: Return preferred instance of cell
+    }
+    
+    // MARK: - Private Methods
+    
+    private func initializeTableViewJamsProperties() {
+        
+        let nib = UINib(nibName: "JamTableViewCell", bundle: nil)
+        self.tableViewJams.register(nib, forCellReuseIdentifier: "JamTableViewCell")
+        
+        self.tableViewJams.dataSource = self
+        self.tableViewJams.rowHeight = 116.0
     }
 }
