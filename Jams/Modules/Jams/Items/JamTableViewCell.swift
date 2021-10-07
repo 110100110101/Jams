@@ -34,6 +34,26 @@ class JamTableViewCell: UITableViewCell {
      */
     public weak var delegate: JamTableViewCellDelegate?
     
+    /**
+     A boolean value that determines whether this jam is one of his/her favorites
+     */
+    public var isFavorite: Bool {
+        
+        get {
+            return self._isFavorite
+        }
+        
+        set (isFavorite) {
+            
+            if isFavorite != self._isFavorite {
+                self._isFavorite = isFavorite
+                self.toggleFavoriteButton(isFavorite: isFavorite)
+            }
+        }
+    }
+    
+    private var _isFavorite: Bool = false
+    
     // MARK: - View Lifecycle
     
     override func prepareForReuse() {
@@ -75,5 +95,21 @@ class JamTableViewCell: UITableViewCell {
      */
     public func setPrice(_ price: String) {
         self.buttonPurchase.setTitle(price, for: .normal)
+    }
+    
+    // MARK: - Private Methods
+    
+    private func toggleFavoriteButton(isFavorite: Bool) {
+        
+        let systemImageName: String
+        if isFavorite {
+            systemImageName = "heart"
+        }
+        else {
+            systemImageName = "heart.fill"
+        }
+        
+        let image = UIImage(systemName: systemImageName)
+        self.buttonFavorite.setImage(image, for: .normal)
     }
 }
