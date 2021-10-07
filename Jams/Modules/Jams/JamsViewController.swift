@@ -7,7 +7,7 @@
 
 import UIKit
 
-class JamsViewController: UIViewController, UISearchBarDelegate {
+class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource {
     
     // MARK: - Outlets
     
@@ -32,5 +32,19 @@ class JamsViewController: UIViewController, UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         // TODO: Search
+    }
+    
+    // MARK: - UITableViewDataSource Methods
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0 // TODO: Return proper number of rows
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell() // TODO: Return preferred instance of cell
     }
 }
