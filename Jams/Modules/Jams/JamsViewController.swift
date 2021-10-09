@@ -61,7 +61,7 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0 // TODO: Return proper number of rows
+        return self.viewModel.jams.value.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
