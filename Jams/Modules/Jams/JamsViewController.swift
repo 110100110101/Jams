@@ -75,8 +75,8 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
     
     private func initializeTableViewJamsProperties() {
         
-        let nib = UINib(nibName: "JamTableViewCell", bundle: nil)
-        self.tableViewJams.register(nib, forCellReuseIdentifier: "JamTableViewCell")
+        let nib = UINib(nibName: JamTableViewCell.reuseIdentifier, bundle: nil)
+        self.tableViewJams.register(nib, forCellReuseIdentifier: JamTableViewCell.reuseIdentifier)
         
         self.tableViewJams.dataSource = self
         self.tableViewJams.rowHeight = 116.0
