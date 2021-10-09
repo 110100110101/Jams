@@ -50,4 +50,23 @@ class JamsViewModel {
     init(dataSource: JamsViewModelDataSource) {
         self.dataSource = dataSource
     }
+    
+    // MARK: - Public Methods
+    
+    /**
+     Search for jams!
+     */
+    public func search(_ jam: String) {
+        
+        self.dataSource.search(jam: jam) { [weak self] results, error in
+            
+            guard let results = results else {
+                // The consumer doesn't react on different kinds of error, so just inform it that an error just had occurred
+                self?.hasEncounteredAnErrorWhileSearching.accept(true)
+                return
+            }
+            
+            self?.jams.accept(results)
+        }
+    }
 }
