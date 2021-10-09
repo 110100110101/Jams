@@ -21,7 +21,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let frame = UIScreen.main.bounds
         self.window = UIWindow(frame: frame)
         
-        let jamsViewController = JamsViewController()
+        let jamsDataSource = JamsDataSource()
+        let jamsViewModel = JamsViewModel(dataSource: jamsDataSource)
+        let jamsViewController = JamsViewController(viewModel: jamsViewModel)
         let jamsNavigationController = UINavigationController(rootViewController: jamsViewController)
         jamsNavigationController.tabBarItem.title = "Jams"
         
