@@ -65,7 +65,10 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell() // TODO: Return preferred instance of cell
+        
+        let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: JamTableViewCell.reuseIdentifier, for: indexPath) as! JamTableViewCell
+        // TODO: Configure the cell
+        return dequeuedCell
     }
     
     // MARK: - Private Methods
