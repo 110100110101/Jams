@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		01CCD1752DBD0B960CC771C5 /* Pods_Jams.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 14FB8BE44A43C4B4886ACC2C /* Pods_Jams.framework */; };
+		2D90636327115DC7009E8D58 /* JamsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90636227115DC7009E8D58 /* JamsViewModel.swift */; };
 		2DA7FCDD270DCCA300F7920C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA7FCDC270DCCA300F7920C /* AppDelegate.swift */; };
 		2DA7FCE6270DCCA400F7920C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7FCE5270DCCA400F7920C /* Assets.xcassets */; };
 		2DA7FCE9270DCCA400F7920C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7FCE7270DCCA400F7920C /* LaunchScreen.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		14FB8BE44A43C4B4886ACC2C /* Pods_Jams.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jams.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		249540F00462CF4659A44A1D /* Pods-Jams.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jams.debug.xcconfig"; path = "Target Support Files/Pods-Jams/Pods-Jams.debug.xcconfig"; sourceTree = "<group>"; };
+		2D90636227115DC7009E8D58 /* JamsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JamsViewModel.swift; sourceTree = "<group>"; };
 		2DA7FCD9270DCCA300F7920C /* Jams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA7FCDC270DCCA300F7920C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DA7FCE5270DCCA400F7920C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				2DA7FCF8270DD3BE00F7920C /* JamsViewController.xib */,
+				2D90636227115DC7009E8D58 /* JamsViewModel.swift */,
 				2DA7FCF7270DD3BE00F7920C /* JamsViewController.swift */,
 				2DA7FD01270DE25400F7920C /* Items */,
 			);
@@ -143,7 +146,6 @@
 				249540F00462CF4659A44A1D /* Pods-Jams.debug.xcconfig */,
 				5190BEFD09513D3C360B9DE8 /* Pods-Jams.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -275,6 +277,7 @@
 				2DA7FD10270F31F900F7920C /* JamDetailsViewController.swift in Sources */,
 				2DA7FD04270DE26D00F7920C /* JamTableViewCell.swift in Sources */,
 				2DA7FCFE270DDFFE00F7920C /* MyJamsViewController.swift in Sources */,
+				2D90636327115DC7009E8D58 /* JamsViewModel.swift in Sources */,
 				2DA7FCF9270DD3BE00F7920C /* JamsViewController.swift in Sources */,
 				2DA7FCDD270DCCA300F7920C /* AppDelegate.swift in Sources */,
 			);
