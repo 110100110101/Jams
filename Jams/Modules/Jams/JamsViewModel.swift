@@ -61,6 +61,8 @@ class JamsViewModel {
      */
     public func search(_ jam: String) {
         
+        // Throttling can be implemented on this level to minimize API usage
+        
         self.dataSource.search(jam: jam) { [weak self] results, error in
             
             guard let results = results else {
