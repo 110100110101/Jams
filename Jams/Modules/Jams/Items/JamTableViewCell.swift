@@ -37,6 +37,13 @@ class JamTableViewCell: UITableViewCell {
     // MARK: - Fields
     
     /**
+     Identifier assigned to instances of this cell
+     
+     - Note: This also serves as the name of nib of this cell.
+     */
+    public static let reuseIdentifier = "JamTableViewCell"
+    
+    /**
      Delegate where all the "important" events would be routed/handled
      */
     public weak var delegate: JamTableViewCellDelegate?
