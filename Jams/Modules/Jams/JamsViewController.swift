@@ -15,7 +15,24 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
     
     // MARK: - Fields
     
+    private let viewModel: JamsViewModel
+    
     private let searchController = UISearchController(searchResultsController: nil)
+    
+    // MARK: - Initializer
+    
+    convenience init() {
+        fatalError("Use the designated initializer init(viewModel:)!")
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented, so use init(viewModel:)!")
+    }
+    
+    init(viewModel: JamsViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
     
     // MARK: - View Lifecycle
     
