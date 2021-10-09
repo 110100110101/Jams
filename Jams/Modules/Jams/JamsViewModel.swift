@@ -40,4 +40,14 @@ class JamsViewModel {
      Determines whether there's an error occurred while searching for jams
      */
     public let hasEncounteredAnErrorWhileSearching = BehaviorRelay<Bool>(value: false)
+    
+    // MARK: - Fields
+    
+    private let dataSource: JamsViewModelDataSource
+    
+    // MARK: - Initializer
+    
+    init(dataSource: JamsViewModelDataSource) {
+        self.dataSource = dataSource
+    }
 }
