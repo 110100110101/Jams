@@ -23,8 +23,11 @@ protocol JamsViewModelDataSource {
     
     /**
      Asks the data source to add/remove the Jam on favorites
+     
+     - parameter isFavorite: Boolean value which determines whether the user likes the jam or not
+     - parameter jam: Jam to be updated
      */
-    func toggleFavorite(_ isFavorite: Bool, onJam jam: Any) // TODO: Provider type for `Any`
+    func toggleFavorite(_ isFavorite: Bool, jam: Any) // TODO: Provider type for `Any`
 }
 
 class JamsViewModel {

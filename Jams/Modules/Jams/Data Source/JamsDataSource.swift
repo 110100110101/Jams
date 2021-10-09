@@ -16,7 +16,7 @@ final class JamsDataSource: JamsViewModelDataSource {
         completion([], nil)
     }
     
-    func toggleFavorite(_ isFavorite: Bool, onJam jam: Any) {
+    func toggleFavorite(_ isFavorite: Bool, jam: Any) {
         // TODO: Toggle it
     }
 }
