@@ -51,7 +51,7 @@ extension FetchedJam: Jammable {
     }
     
     var jamArtwork: URL {
-        return self.jamArtwork
+        return self.trackArtwork
     }
     
     var jamDescription: String {
