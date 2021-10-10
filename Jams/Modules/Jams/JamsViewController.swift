@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource {
     
@@ -18,6 +19,8 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
     private let viewModel: JamsViewModel
     
     private let searchController = UISearchController(searchResultsController: nil)
+    
+    private let disposeBag = DisposeBag()
     
     // MARK: - Initializer
     
@@ -46,6 +49,8 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
         self.searchController.searchBar.placeholder = "Find Your Jams!"
         
         self.initializeTableViewJamsProperties()
+        
+        self.configureBindings()
     }
     
     // MARK: - UISearchBarDelegate Methods
@@ -90,5 +95,17 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
         
         self.tableViewJams.dataSource = self
         self.tableViewJams.rowHeight = 116.0
+    }
+    
+    private func configureBindings() {
+        
+        // MARK: jams
+        
+        self.viewModel.jams
+            .asDriver()
+            .drive(onNext: { [weak self] _ in
+                self?.tableViewJams.reloadData()
+            })
+            .disposed(by: self.disposeBag)
     }
 }
