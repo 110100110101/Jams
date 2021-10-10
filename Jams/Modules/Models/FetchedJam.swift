@@ -39,3 +39,26 @@ class FetchedJam: Decodable {
         case genre = "primaryGenreName"
     }
 }
+
+extension FetchedJam: Jammable {
+    
+    var jamID: Decimal {
+        return self.trackId
+    }
+    
+    var jamName: String {
+        return self.trackName
+    }
+    
+    var jamArtwork: URL {
+        return self.jamArtwork
+    }
+    
+    var jamDescription: String {
+        return self.trackLongDescription
+    }
+    
+    var jamGenre: String {
+        return self.genre
+    }
+}
