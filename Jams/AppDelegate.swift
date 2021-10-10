@@ -31,7 +31,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let jamsImage = UIImage(systemName: "play.tv.fill")
         jamsNavigationController.tabBarItem.image = jamsImage
         
-        let myJamsViewModel = MyJamsViewModel()
+        let myJamsDataSource = MyJamsDataSource()
+        let myJamsViewModel = MyJamsViewModel(dataSource: myJamsDataSource)
         let myJamsViewController = MyJamsViewController(viewModel: myJamsViewModel)
         let myJamsNavigationController = UINavigationController(rootViewController: myJamsViewController)
         myJamsNavigationController.tabBarItem.title = "My Jams"
