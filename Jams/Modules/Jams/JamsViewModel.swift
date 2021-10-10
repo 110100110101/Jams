@@ -22,12 +22,20 @@ protocol JamsViewModelDataSource {
     func search(jam: String, completion: @escaping ([FetchedJam]?, Error?) -> ())
     
     /**
-     Asks the data source to add/remove the Jam on favorites
+     Asks the data source to mark this jam as favorite
      
-     - parameter isFavorite: Boolean value which determines whether the user likes the jam or not
-     - parameter jam: Jam to be updated
+     - parameter jam: Jam to be added on the favorite list
+     - parameter completion: Invoked whenever the addition of jam was successful or not
      */
-    func toggleFavorite(_ isFavorite: Bool, jam: FetchedJam)
+    func addJamToFavorites(_ jam: FetchedJam, completion: @escaping (Error?) -> ())
+    
+    /**
+     Asks the data source to remote the jam on favorites list
+     
+     - parameter jam: Jam to be removed on the list
+     - parameter completion: Invoked whenever the removal of jam was successful or not
+     */
+    func removeJamToFavorites(_ jam: FetchedJam, completion: @escaping (Error?) -> ())
 }
 
 class JamsViewModel {
