@@ -9,11 +9,11 @@ import Foundation
 import CoreData
 
 @objc(Jam)
-class Jam: NSManagedObject {
+class FavoriteJam: NSManagedObject {
     
 }
 
-extension Jam: Jammable {
+extension FavoriteJam: Jammable {
 
     var jamID: Decimal {
         return self.trackId!.decimalValue
