@@ -6,10 +6,21 @@
 //
 
 import Foundation
+import CoreData
 
 final class CoreDataManager {
     
+    // MARK: - Singleton
+    
     public static let sharedInstance = CoreDataManager()
     
-    private init() {}
+    // MARK: - Fields
+    
+    public let persistentContainer: NSPersistentContainer
+    
+    // MARK: - Initializer
+    
+    private init() {
+        self.persistentContainer = NSPersistentContainer(name: "Jams")
+    }
 }
