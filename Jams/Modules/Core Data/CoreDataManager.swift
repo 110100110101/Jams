@@ -116,6 +116,80 @@ final class CoreDataManager {
     }
     
     /**
+     Fetch favorite jam with given track ID
+     
+     - parameter completion: Invoked whenever the favorite jam have been fetched or not.
+     If both values were `nil` means, there's no jam with that track ID
+     
+     - Note: `completion` is invoked on main thread
+     */
+    public func fetchFavoriteJam(withTrackID trackID: Decimal, completion: @escaping (FavoriteJam?, Error?) -> ()) {
+        
+        guard let persistentContainer = self.persistentContainer.value else {
+            DispatchQueue.main.async {
+                let error = NSError(domain: "com.yting.Jams", code: 1000, userInfo: nil)
+                completion(nil, error)
+            }
+            return
+        }
+        
+        let backgroundContext = persistentContainer.newBackgroundContext()
+        
+        let fetchRequest: NSFetchRequest<FavoriteJam> = FavoriteJam.fetchRequest()
+        
+        let predicate = NSPredicate(format: "trackId == %@", argumentArray: [NSDecimalNumber(decimal: trackID)])
+        fetchRequest.predicate = predicate
+        fetchRequest.fetchLimit = 1
+        
+        let asynchronousFetchRequest = NSAsynchronousFetchRequest<FavoriteJam>(fetchRequest: fetchRequest) { result in
+            
+            if let error = result.operationError {
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+            }
+            
+            guard let favoriteJam = result.finalResult?.first else {
+                
+                DispatchQueue.main.async {
+                    let error = NSError(domain: "com.yting.Jams", code: 1001, userInfo: nil)
+                    completion(nil, error)
+                }
+                
+                return
+            }
+            
+            /*
+             Instances of NSManagedObject from another queue must not be passed to another queue,
+             so create instances of it using its objectID
+             */
+            
+            DispatchQueue.main.async {
+                
+                let mainContext = persistentContainer.viewContext
+                
+                let objectID = favoriteJam.objectID
+                guard let mainFavoriteJam = mainContext.object(with: objectID) as? FavoriteJam else {
+                    let error = NSError(domain: "com.yting.Jams", code: 1001, userInfo: nil)
+                    completion(nil, error)
+                    return
+                }
+                
+                completion(mainFavoriteJam, nil)
+            }
+        }
+        
+        do {
+            try backgroundContext.execute(asynchronousFetchRequest)
+        }
+        catch {
+            DispatchQueue.main.async {
+                completion(nil, error)
+            }
+        }
+    }
+    
+    /**
      Marks the jam as a favorite
      
      - parameter jam: Jam that isn't added on the list yet
