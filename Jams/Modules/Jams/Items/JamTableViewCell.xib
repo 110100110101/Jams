@@ -74,6 +74,7 @@
                 <outlet property="buttonFavorite" destination="8nk-8T-Lxg" id="G1b-Rf-MCz"/>
                 <outlet property="imageViewTrackArtwork" destination="odZ-lu-O1v" id="YRA-Im-jBO"/>
                 <outlet property="labelGenre" destination="DgA-Lt-SlQ" id="2Ve-Rj-3yP"/>
+                <outlet property="labelShortDescription" destination="tmq-39-gmD" id="fYX-oi-fNd"/>
                 <outlet property="labelTrackName" destination="1ZN-eu-kLl" id="WMj-U0-Jh3"/>
             </connections>
             <point key="canvasLocation" x="265.21739130434787" y="162.05357142857142"/>
