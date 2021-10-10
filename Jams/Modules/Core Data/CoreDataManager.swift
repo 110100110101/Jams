@@ -200,10 +200,8 @@ final class CoreDataManager {
     public func addFavoriteJam(jam: Jammable, completion: @escaping (FavoriteJam?, Error?) -> ()) {
         
         guard let persistentContainer = self.persistentContainer.value else {
-            DispatchQueue.main.async {
-                let error = NSError(domain: "com.yting.Jams", code: 1000, userInfo: nil)
-                completion(nil, error)
-            }
+            let error = NSError(domain: "com.yting.Jams", code: 1000, userInfo: nil)
+            completion(nil, error)
             return
         }
         
