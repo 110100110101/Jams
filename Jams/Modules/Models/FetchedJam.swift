@@ -14,7 +14,7 @@ class FetchedJam: Decodable {
     
     public var trackName: String
     public var trackArtwork: URL
-    public var description: String
+    public var trackDescription: String
     public var genre: String
     public var price: Decimal
     public var isFavorite: Bool
@@ -25,7 +25,7 @@ class FetchedJam: Decodable {
         
         self.trackName = try container.decode(String.self, forKey: .trackName)
         self.trackArtwork = try container.decode(URL.self, forKey: .trackArtwork)
-        self.description = try container.decode(String.self, forKey: .description)
+        self.trackDescription = try container.decode(String.self, forKey: .trackDescription)
         self.genre = try container.decode(String.self, forKey: .genre)
         self.price = try container.decode(Decimal.self, forKey: .price)
         self.isFavorite = false
@@ -34,7 +34,7 @@ class FetchedJam: Decodable {
     private enum CodingKeys: String, CodingKey {
         case trackName
         case trackArtwork = "artworkUrl100"
-        case description = "longDescription"
+        case trackDescription = "longDescription"
         case genre = "primaryGenreName"
         case price = "trackPrice"
     }
