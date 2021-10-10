@@ -15,13 +15,6 @@ protocol JamTableViewCellDelegate: AnyObject {
      - parameter cell: Instance where the event did just happened
      */
     func jamTableViewCellButtonFavoriteDidTap(_ cell: JamTableViewCell)
-    
-    /**
-     Informs the delegate that the given instance's purchase button has been tapped
-     
-     - parameter cell: Instance where the event did just happened
-     */
-    func jamTableViewCellButtonPurchaseDidTap(_ cell: JamTableViewCell)
 }
 
 class JamTableViewCell: UITableViewCell {
