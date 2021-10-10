@@ -14,7 +14,7 @@ final class MyJamsDataSource: MyJamsViewModelDataSource {
     
     // MARK: - MyJamsViewModelDataSource Methods
     
-    func getAllFavoriteJams(completion: @escaping ([FavoriteJam]?, Error) -> ()) {
+    func getAllFavoriteJams(completion: @escaping ([FavoriteJam]?, Error?) -> ()) {
         
     }
     
