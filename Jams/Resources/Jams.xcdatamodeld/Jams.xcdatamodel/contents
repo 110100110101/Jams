@@ -4,8 +4,8 @@
         <attribute name="genre" attributeType="String"/>
         <attribute name="isFavorite" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="NO"/>
         <attribute name="trackArtwork" attributeType="URI"/>
-        <attribute name="trackId" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
-        <attribute name="trackLongDescription" optional="YES" attributeType="String"/>
+        <attribute name="trackId" attributeType="Decimal" defaultValueString="0.0"/>
+        <attribute name="trackLongDescription" attributeType="String"/>
         <attribute name="trackName" attributeType="String"/>
     </entity>
     <elements>
