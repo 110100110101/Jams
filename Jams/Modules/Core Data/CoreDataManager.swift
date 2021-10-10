@@ -149,33 +149,29 @@ final class CoreDataManager {
                 }
             }
             
-            guard let favoriteJam = result.finalResult?.first else {
+            if let favoriteJam = result.finalResult?.first {
+                
+                /*
+                 Instances of NSManagedObject from another queue must not be passed to another queue,
+                 so create instances of it using its objectID
+                 */
                 
                 DispatchQueue.main.async {
-                    let error = NSError(domain: "com.yting.Jams", code: 1001, userInfo: nil)
-                    completion(nil, error)
+                    
+                    let mainContext = persistentContainer.viewContext
+                    
+                    let objectID = favoriteJam.objectID
+                    guard let mainFavoriteJam = mainContext.object(with: objectID) as? FavoriteJam else {
+                        let error = NSError(domain: "com.yting.Jams", code: 1001, userInfo: nil)
+                        completion(nil, error)
+                        return
+                    }
+                    
+                    completion(mainFavoriteJam, nil)
                 }
-                
-                return
             }
-            
-            /*
-             Instances of NSManagedObject from another queue must not be passed to another queue,
-             so create instances of it using its objectID
-             */
-            
-            DispatchQueue.main.async {
-                
-                let mainContext = persistentContainer.viewContext
-                
-                let objectID = favoriteJam.objectID
-                guard let mainFavoriteJam = mainContext.object(with: objectID) as? FavoriteJam else {
-                    let error = NSError(domain: "com.yting.Jams", code: 1001, userInfo: nil)
-                    completion(nil, error)
-                    return
-                }
-                
-                completion(mainFavoriteJam, nil)
+            else {
+                completion(nil, nil)
             }
         }
         
