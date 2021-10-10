@@ -6,9 +6,8 @@
         <attribute name="trackArtwork" attributeType="URI"/>
         <attribute name="trackLongDescription" optional="YES" attributeType="String"/>
         <attribute name="trackName" attributeType="String"/>
-        <attribute name="trackShortDescription" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Jam" positionX="-63" positionY="-18" width="128" height="119"/>
+        <element name="Jam" positionX="-63" positionY="-18" width="128" height="104"/>
     </elements>
 </model>
