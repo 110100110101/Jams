@@ -114,4 +114,41 @@ final class CoreDataManager {
             }
         }
     }
+    
+    /**
+     Marks the jam as a favorite
+     
+     - parameter jam: Jam that isn't added on the list yet
+     - parameter completion: Invoked whenever the marking of jam as favorite was successful or not
+     
+     - Note: Adding the same jam isn't checked at this point, so multiple instances of same jam might be saved
+     */
+    public func addFavoriteJam(jam: Jammable, completion: @escaping (FavoriteJam?, Error?) -> ()) {
+        
+        guard let persistentContainer = self.persistentContainer.value else {
+            DispatchQueue.main.async {
+                let error = NSError(domain: "com.yting.Jams", code: 1000, userInfo: nil)
+                completion(nil, error)
+            }
+            return
+        }
+        
+        let mainContext = persistentContainer.viewContext
+        let entityDescription = FavoriteJam.entity()
+        let favoriteJam = FavoriteJam(entity: entityDescription, insertInto: mainContext)
+        
+        favoriteJam.setValue(jam.jamGenre, forKey: "genre")
+        favoriteJam.setValue(jam.jamArtwork, forKey: "trackArtwork")
+        favoriteJam.setValue(jam.jamID, forKey: "trackId")
+        favoriteJam.setValue(jam.jamDescription, forKey: "trackLongDescription")
+        favoriteJam.setValue(jam.jamName, forKey: "trackName")
+        
+        do {
+            try mainContext.save()
+            completion(favoriteJam, nil)
+        }
+        catch {
+            completion(nil, error)
+        }
+    }
 }
