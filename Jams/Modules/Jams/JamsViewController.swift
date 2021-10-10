@@ -80,6 +80,8 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
         dequeuedCell.setGenre(data.genre)
         dequeuedCell.isFavorite = data.isFavorite
         
+        dequeuedCell.accessoryType = .disclosureIndicator
+        
         // TODO: Set delegate
         
         return dequeuedCell
