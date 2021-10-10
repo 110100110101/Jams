@@ -25,7 +25,6 @@ class JamTableViewCell: UITableViewCell {
     @IBOutlet private var labelTrackName: UILabel!
     @IBOutlet private var buttonFavorite: UIButton!
     @IBOutlet private var labelGenre: UILabel!
-    @IBOutlet private var labelShortDescription: UILabel!
     
     // MARK: - Fields
     
@@ -101,10 +100,6 @@ class JamTableViewCell: UITableViewCell {
         self.labelGenre.text = genre
     }
     
-    public func setShortDescription(_ description: String?) {
-        self.labelShortDescription.text = description
-    }
-    
     // MARK: - Private Methods
     
     private func toggleFavoriteButton(isFavorite: Bool) {
@@ -129,6 +124,5 @@ class JamTableViewCell: UITableViewCell {
         self.imageViewTrackArtwork.image = nil
         self.labelTrackName.text = nil
         self.labelGenre.text = nil
-        self.labelShortDescription.text = nil
     }
 }
