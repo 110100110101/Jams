@@ -92,4 +92,14 @@ class JamsViewModel {
             jam.isFavorite = (error == nil)
         })
     }
+    
+    /**
+     Removes the jam on favorites
+     */
+    public func removeJamOnFavorites(_ jam: FetchedJam) {
+                
+        self.dataSource.removeJamOnFavorites(jam, completion: { (error) in
+            jam.isFavorite = !(error == nil)
+        })
+    }
 }
