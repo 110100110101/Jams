@@ -31,8 +31,8 @@ class FetchedJam: Decodable {
     
     private enum CodingKeys: String, CodingKey {
         case trackName
-        case trackArtwork
-        case genre
-        case price
+        case trackArtwork = "artworkUrl100"
+        case genre = "primaryGenreName"
+        case price = "trackPrice"
     }
 }
