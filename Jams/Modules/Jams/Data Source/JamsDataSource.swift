@@ -30,7 +30,7 @@ final class JamsDataSource: JamsViewModelDataSource {
                 
                 let decoder = JSONDecoder()
                 do {
-                    let fetchedJams = try decoder.decode(FetchedJams.self, from: response.data)
+                    let fetchedJams = try decoder.decode(SearchResults.self, from: response.data)
                     completion(fetchedJams.jams, nil)
                 }
                 catch {

@@ -10,7 +10,7 @@ import Foundation
 /**
  Object that represents the root object of iTunes Search API
  */
-class FetchedJams: Decodable {
+class SearchResults: Decodable {
     
     public let jams: [FetchedJam]
     
