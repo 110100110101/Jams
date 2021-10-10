@@ -9,6 +9,9 @@ import Foundation
 import Moya
 import RxSwift
 
+/**
+ Serves as the designated data souce for the Jams View
+ */
 final class JamsDataSource: JamsViewModelDataSource {
     
     private let provider = MoyaProvider<ITunes>()
