@@ -97,7 +97,8 @@ final class JamsDataSource: JamsViewModelDataSource {
             // Now, align the data
             
             for fetchedJam in fetchedJams {
-                fetchedJam.isFavorite = favoriteJamsIDs.contains(fetchedJam.jamID)
+                let shouldMarkJamAsFavorite = favoriteJamsIDs.contains(fetchedJam.jamID)
+                fetchedJam.isFavorite = shouldMarkJamAsFavorite
             }
             
             // Dispatch it
