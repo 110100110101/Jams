@@ -6,7 +6,8 @@ target 'Jams' do
   use_frameworks!
 
   # Pods for Jams
-  pod 'Moya/RxSwift', '15.0'
+  pod 'Moya/RxSwift', '15.0.0'
   pod 'RxCocoa', '6.2.0'
   pod 'DZNEmptyDataSet', '1.8.1'
+  pod 'Kingfisher', '7.0.0'
 end

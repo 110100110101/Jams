@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (5.4.4)
   - DZNEmptyDataSet (1.8.1)
+  - Kingfisher (7.0.0)
   - Moya/Core (15.0.0):
     - Alamofire (~> 5.0)
   - Moya/RxSwift (15.0.0):
@@ -15,13 +16,15 @@ PODS:
 
 DEPENDENCIES:
   - DZNEmptyDataSet (= 1.8.1)
-  - Moya/RxSwift (= 15.0)
+  - Kingfisher (= 7.0.0)
+  - Moya/RxSwift (= 15.0.0)
   - RxCocoa (= 6.2.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - DZNEmptyDataSet
+    - Kingfisher
     - Moya
     - RxCocoa
     - RxRelay
@@ -30,11 +33,12 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
+  Kingfisher: 5efc54fec3980f92354898532e562cc17f31efb4
   Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   RxCocoa: 4baf94bb35f2c0ab31bc0cb9f1900155f646ba42
   RxRelay: e72dbfd157807478401ef1982e1c61c945c94b2f
   RxSwift: d356ab7bee873611322f134c5f9ef379fa183d8f
 
-PODFILE CHECKSUM: bae443f76a0c31f463c3d52fba6e14514ccfdb7f
+PODFILE CHECKSUM: 22cf0c580eb2dde0fc113be776e57ee3b8b94094
 
 COCOAPODS: 1.11.2
