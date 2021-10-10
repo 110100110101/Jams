@@ -129,5 +129,6 @@ class JamTableViewCell: UITableViewCell {
         self.imageViewTrackArtwork.image = nil
         self.labelTrackName.text = nil
         self.labelGenre.text = nil
+        self.buttonFavorite.setImage(nil, for: .normal)
     }
 }
