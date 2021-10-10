@@ -11,15 +11,13 @@ import RxSwift
 
 final class JamsDataSource: JamsViewModelDataSource {
     
-    typealias T = FetchedJam
-    
     private let provider = MoyaProvider<ITunes>()
     
     private let disposeBag = DisposeBag()
     
     // MARK: - JamsViewModelDataSource Methods
     
-    func search(jam: String, completion: @escaping ([T]?, Error?) -> ()) {
+    func search(jam: String, completion: @escaping ([FetchedJam]?, Error?) -> ()) {
             
         let parameters = ["term": jam,
                           "entity": "movie"]
@@ -44,7 +42,7 @@ final class JamsDataSource: JamsViewModelDataSource {
             .disposed(by: self.disposeBag)
     }
     
-    func toggleFavorite(_ isFavorite: Bool, jam: T) {
+    func toggleFavorite(_ isFavorite: Bool, jam: FetchedJam) {
         // TODO: Toggle it
     }
 }
