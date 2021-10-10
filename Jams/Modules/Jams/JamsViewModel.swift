@@ -12,6 +12,8 @@ import RxCocoa
  The methods that an object adopts to manage and provide jams for Jams' ViewModel
  */
 protocol JamsViewModelDataSource {
+        
+    associatedtype T: Jammable
     
     /**
      Asks the data source to search for Jams
@@ -19,7 +21,7 @@ protocol JamsViewModelDataSource {
      - parameter jam: Name of the Jam
      - parameter completion: Invoked whenever the data source has finished searching for it. Only one of the argument should contain a value.
      */
-    func search(jam: String, completion: @escaping ([FetchedJam]?, Error?) -> ())
+    func search(jam: String, completion: @escaping ([T]?, Error?) -> ())
     
     /**
      Asks the data source to add/remove the Jam on favorites
@@ -27,17 +29,17 @@ protocol JamsViewModelDataSource {
      - parameter isFavorite: Boolean value which determines whether the user likes the jam or not
      - parameter jam: Jam to be updated
      */
-    func toggleFavorite(_ isFavorite: Bool, jam: FetchedJam)
+    func toggleFavorite(_ isFavorite: Bool, jam: T)
 }
 
-class JamsViewModel {
+class JamsViewModel<DataSource> where DataSource: JamsViewModelDataSource {
     
     // MARK: - Observable Fields
     
     /**
      Field which the consumer may observe to get the jams. Search results would be also routed here.
      */
-    public let jams = BehaviorRelay<[FetchedJam]>(value: [])
+    public let jams = BehaviorRelay<[DataSource.T]>(value: [])
     
     /**
      Determines whether there's an error occurred while searching for jams
@@ -46,11 +48,11 @@ class JamsViewModel {
     
     // MARK: - Fields
     
-    private let dataSource: JamsViewModelDataSource
+    private let dataSource: DataSource
     
     // MARK: - Initializer
     
-    init(dataSource: JamsViewModelDataSource) {
+    init(dataSource: DataSource) {
         self.dataSource = dataSource
     }
     
