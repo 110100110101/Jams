@@ -16,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UITabBar.appearance().tintColor = .systemPink
         UIButton.appearance().tintColor = .systemPink
+        UIBarButtonItem.appearance().tintColor = .systemPink
         UISearchBar.appearance().tintColor = .systemPink
         
         let frame = UIScreen.main.bounds
