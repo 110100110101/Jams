@@ -8,6 +8,9 @@
 import Foundation
 import CoreData
 
+/**
+ Class that represents the objects from iTunes Search API & Core Data
+ */
 class Jam: NSManagedObject, Decodable {
     
     /**
