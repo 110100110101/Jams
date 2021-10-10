@@ -17,7 +17,7 @@ final class JamsDataSource: JamsViewModelDataSource {
     
     // MARK: - JamsViewModelDataSource Methods
     
-    func search(jam: String, completion: @escaping ([Any]?, Error?) -> ()) {
+    func search(jam: String, completion: @escaping ([FetchedJam]?, Error?) -> ()) {
             
         let parameters = ["term": jam,
                           "entity": "movie"]
@@ -42,7 +42,7 @@ final class JamsDataSource: JamsViewModelDataSource {
             .disposed(by: self.disposeBag)
     }
     
-    func toggleFavorite(_ isFavorite: Bool, jam: Any) {
+    func toggleFavorite(_ isFavorite: Bool, jam: FetchedJam) {
         // TODO: Toggle it
     }
 }
