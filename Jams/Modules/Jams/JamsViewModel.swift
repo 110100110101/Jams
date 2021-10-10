@@ -35,7 +35,7 @@ protocol JamsViewModelDataSource {
      - parameter jam: Jam to be removed on the list
      - parameter completion: Invoked whenever the removal of jam was successful or not
      */
-    func removeJamToFavorites(_ jam: FetchedJam, completion: @escaping (Error?) -> ())
+    func removeJamOnFavorites(_ jam: FetchedJam, completion: @escaping (Error?) -> ())
 }
 
 class JamsViewModel {

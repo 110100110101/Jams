@@ -69,7 +69,7 @@ final class JamsDataSource: JamsViewModelDataSource {
         })
     }
     
-    func removeJamToFavorites(_ jam: FetchedJam, completion: @escaping (Error?) -> ()) {
+    func removeJamOnFavorites(_ jam: FetchedJam, completion: @escaping (Error?) -> ()) {
         
     }
     
