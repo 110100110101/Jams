@@ -30,8 +30,26 @@ final class JamsDataSource: JamsViewModelDataSource {
                 
                 let decoder = JSONDecoder()
                 do {
-                    let fetchedJams = try decoder.decode(SearchResults.self, from: response.data)
-                    completion(fetchedJams.jams, nil)
+                    
+                    let searchResults = try decoder.decode(SearchResults.self, from: response.data)
+                    let fetchedJams = searchResults.jams
+                    
+                    CoreDataManager.sharedInstance.fetchAllFavoriteJams(completion: { [weak self] (favoriteJams, error) in
+                        
+                        if error != nil {
+                            /*
+                             Don't bother to match the data, if an error has occured while fetching the favorite jams
+                             */
+                            completion(fetchedJams, nil)
+                        }
+                        else if let favoriteJams = favoriteJams {
+                            self?.matchFetchedJams(fetchedJams: fetchedJams,
+                                                   fromFavoriteJams: favoriteJams,
+                                                   completion: { (alignedFetchedJams) in
+                                                    completion(alignedFetchedJams, nil)
+                                                   })
+                        }
+                    })
                 }
                 catch {
                     completion(nil, error)
