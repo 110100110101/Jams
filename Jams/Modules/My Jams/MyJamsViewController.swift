@@ -9,6 +9,10 @@ import UIKit
 
 class MyJamsViewController: UIViewController {
     
+    // MARK: - Outlets
+    
+    @IBOutlet private var tableViewFavoriteJams: UITableView!
+    
     // MARK: - Fields
     
     private let viewModel: MyJamsViewModel
