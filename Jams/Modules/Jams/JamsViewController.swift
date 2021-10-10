@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource {
+class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Outlets
     
@@ -87,6 +87,14 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
         return dequeuedCell
     }
     
+    // MARK: - UITableViewDelegate Methods
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let detailsViewController = JamDetailsViewController()
+        self.navigationController?.pushViewController(detailsViewController, animated: true)
+    }
+    
     // MARK: - Private Methods
     
     private func initializeTableViewJamsProperties() {
@@ -95,6 +103,7 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
         self.tableViewJams.register(nib, forCellReuseIdentifier: JamTableViewCell.reuseIdentifier)
         
         self.tableViewJams.dataSource = self
+        self.tableViewJams.delegate = self
         self.tableViewJams.rowHeight = 116.0
     }
     
