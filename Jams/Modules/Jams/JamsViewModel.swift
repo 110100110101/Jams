@@ -74,4 +74,10 @@ class JamsViewModel {
             self?.jams.accept(results)
         }
     }
+    
+    /**
+     Marks/Unmarks the given jam as favorite based on the `isFavorite` argument
+     */
+    public func mark(jam: FetchedJam, isFavorite: Bool) {
+    }
 }
