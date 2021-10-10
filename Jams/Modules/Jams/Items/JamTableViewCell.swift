@@ -101,6 +101,10 @@ class JamTableViewCell: UITableViewCell {
         self.labelGenre.text = genre
     }
     
+    public func setShortDescription(_ description: String?) {
+        self.labelShortDescription.text = description
+    }
+    
     // MARK: - Private Methods
     
     private func toggleFavoriteButton(isFavorite: Bool) {
