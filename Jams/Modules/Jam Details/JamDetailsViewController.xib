@@ -23,45 +23,29 @@
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="FCW-rI-8V0">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="727.5"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="665.5"/>
                             <subviews>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOe-Mo-qP2" userLabel="Header Section">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="194"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="132"/>
                                     <subviews>
                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Dbw-ky-ylo" userLabel="ImageView Track Artwork">
-                                            <rect key="frame" x="16" y="47" width="100" height="100"/>
+                                            <rect key="frame" x="16" y="16" width="100" height="100"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="100" id="FEy-fz-9HP"/>
                                                 <constraint firstAttribute="height" constant="100" id="lFn-Be-M4c"/>
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hs0-0T-N9f" userLabel="Track Header Details">
-                                            <rect key="frame" x="132" y="16" width="266" height="162"/>
+                                            <rect key="frame" x="132" y="16" width="266" height="48"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Track Name 1 Track Name 2 Track Name 3" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avR-iA-2uP" userLabel="Label Track Name">
-                                                    <rect key="frame" x="0.0" y="0.0" width="220" height="93.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Track Name 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avR-iA-2uP" userLabel="Label Track Name">
+                                                    <rect key="frame" x="0.0" y="0.0" width="220" height="31.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JtR-cW-mzX" userLabel="Button Purchase">
-                                                    <rect key="frame" x="0.0" y="132" width="95" height="30"/>
-                                                    <color key="backgroundColor" systemColor="systemPinkColor"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="30" id="0e8-s2-aft"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
-                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                    <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
-                                                    <state key="normal" title="$ 420.69"/>
-                                                    <userDefinedRuntimeAttributes>
-                                                        <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                            <integer key="value" value="15"/>
-                                                        </userDefinedRuntimeAttribute>
-                                                    </userDefinedRuntimeAttributes>
-                                                </button>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cIb-rR-DEY" userLabel="Button Favorite">
-                                                    <rect key="frame" x="236" y="32" width="30" height="30"/>
+                                                    <rect key="frame" x="236" y="1" width="30" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="YMA-1M-XyN"/>
                                                         <constraint firstAttribute="height" constant="30" id="lvs-uv-1nl"/>
@@ -72,7 +56,7 @@
                                                     </state>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qjw-KD-dkb" userLabel="Label Genre">
-                                                    <rect key="frame" x="0.0" y="95.5" width="266" height="14.5"/>
+                                                    <rect key="frame" x="0.0" y="33.5" width="266" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" systemColor="systemGrayColor"/>
                                                     <nil key="highlightedColor"/>
@@ -85,11 +69,9 @@
                                                 <constraint firstItem="cIb-rR-DEY" firstAttribute="centerY" secondItem="avR-iA-2uP" secondAttribute="centerY" id="I4Z-U4-6jc"/>
                                                 <constraint firstItem="Qjw-KD-dkb" firstAttribute="leading" secondItem="Hs0-0T-N9f" secondAttribute="leading" id="KJy-ya-A4L"/>
                                                 <constraint firstAttribute="trailing" secondItem="cIb-rR-DEY" secondAttribute="trailing" id="LL3-Id-0hv"/>
-                                                <constraint firstAttribute="bottom" secondItem="JtR-cW-mzX" secondAttribute="bottom" id="PTR-Pr-GHK"/>
                                                 <constraint firstItem="avR-iA-2uP" firstAttribute="top" secondItem="Hs0-0T-N9f" secondAttribute="top" id="VLr-57-vht"/>
-                                                <constraint firstItem="JtR-cW-mzX" firstAttribute="top" secondItem="Qjw-KD-dkb" secondAttribute="bottom" constant="22" id="Yts-0T-yk0"/>
-                                                <constraint firstItem="JtR-cW-mzX" firstAttribute="leading" secondItem="Hs0-0T-N9f" secondAttribute="leading" id="ZRx-OY-pIB"/>
                                                 <constraint firstAttribute="trailing" secondItem="Qjw-KD-dkb" secondAttribute="trailing" id="e2Q-6u-vzx"/>
+                                                <constraint firstAttribute="bottom" secondItem="Qjw-KD-dkb" secondAttribute="bottom" id="hXr-Wh-YUY"/>
                                                 <constraint firstItem="avR-iA-2uP" firstAttribute="leading" secondItem="Hs0-0T-N9f" secondAttribute="leading" id="lt7-CR-kHm"/>
                                                 <constraint firstItem="Qjw-KD-dkb" firstAttribute="top" secondItem="avR-iA-2uP" secondAttribute="bottom" constant="2" id="sfv-oX-6IG"/>
                                             </constraints>
@@ -98,15 +80,16 @@
                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                     <constraints>
                                         <constraint firstAttribute="trailing" secondItem="Hs0-0T-N9f" secondAttribute="trailing" constant="16" id="1kf-lC-xRc"/>
-                                        <constraint firstAttribute="bottom" secondItem="Hs0-0T-N9f" secondAttribute="bottom" constant="16" id="8Lt-vW-QMa"/>
+                                        <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Hs0-0T-N9f" secondAttribute="bottom" constant="16" id="8Lt-vW-QMa"/>
+                                        <constraint firstItem="Dbw-ky-ylo" firstAttribute="top" secondItem="vOe-Mo-qP2" secondAttribute="top" constant="16" id="GZk-0B-aPZ"/>
+                                        <constraint firstAttribute="bottom" secondItem="Dbw-ky-ylo" secondAttribute="bottom" priority="750" constant="16" id="IDk-jp-fTH"/>
                                         <constraint firstItem="Hs0-0T-N9f" firstAttribute="leading" secondItem="Dbw-ky-ylo" secondAttribute="trailing" constant="16" id="T8L-MO-trg"/>
                                         <constraint firstItem="Hs0-0T-N9f" firstAttribute="top" secondItem="vOe-Mo-qP2" secondAttribute="top" constant="16" id="bni-xH-62K"/>
-                                        <constraint firstItem="Dbw-ky-ylo" firstAttribute="centerY" secondItem="Hs0-0T-N9f" secondAttribute="centerY" id="j27-uo-XWt"/>
                                         <constraint firstItem="Dbw-ky-ylo" firstAttribute="leading" secondItem="vOe-Mo-qP2" secondAttribute="leading" constant="16" id="jbU-Yj-XYu"/>
                                     </constraints>
                                 </view>
                                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YjP-XW-MIJ" userLabel="Preview Section">
-                                    <rect key="frame" x="0.0" y="194" width="414" height="221"/>
+                                    <rect key="frame" x="0.0" y="132" width="414" height="221"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="id9-q7-wA0">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="221"/>
@@ -122,15 +105,15 @@
                                     </constraints>
                                 </view>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f03-M5-hb4" userLabel="Description Section">
-                                    <rect key="frame" x="0.0" y="194" width="414" height="533.5"/>
+                                    <rect key="frame" x="0.0" y="132" width="414" height="533.5"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vWo-iP-ls9">
                                             <rect key="frame" x="16" y="16" width="382" height="501.5"/>
-                                            <mutableString key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam orci ligula, elementum et tincidunt eu, vulputate in nunc. Vestibulum ultrices auctor sem blandit finibus. Curabitur quis vehicula urna, non bibendum ipsum. Integer purus mauris, facilisis in varius quis, porttitor a augue. Donec luctus dui magna, at ullamcorper ipsum vehicula ac. Vivamus sodales leo quis nulla euismod tincidunt. Morbi rutrum magna sem, at tristique ligula feugiat suscipit. Aliquam hendrerit vestibulum placerat. Donec in pretium orci. Fusce rutrum, leo eget pulvinar placerat, purus neque auctor sem, et gravida est tellus eu erat. Quisque vel sem interdum ante placerat dignissim et in erat. Vivamus eu leo tempus, posuere arcu ac, gravida elit. Nam sed facilisis nibh, non posuere ex. Nam nec tortor vitae tellus cursus auctor.
+                                            <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam orci ligula, elementum et tincidunt eu, vulputate in nunc. Vestibulum ultrices auctor sem blandit finibus. Curabitur quis vehicula urna, non bibendum ipsum. Integer purus mauris, facilisis in varius quis, porttitor a augue. Donec luctus dui magna, at ullamcorper ipsum vehicula ac. Vivamus sodales leo quis nulla euismod tincidunt. Morbi rutrum magna sem, at tristique ligula feugiat suscipit. Aliquam hendrerit vestibulum placerat. Donec in pretium orci. Fusce rutrum, leo eget pulvinar placerat, purus neque auctor sem, et gravida est tellus eu erat. Quisque vel sem interdum ante placerat dignissim et in erat. Vivamus eu leo tempus, posuere arcu ac, gravida elit. Nam sed facilisis nibh, non posuere ex. Nam nec tortor vitae tellus cursus auctor.
 
 Duis scelerisque eget elit eget sodales. Pellentesque sapien massa, egestas quis dolor sit amet, consequat auctor velit. Etiam vitae lectus faucibus, pellentesque justo ut, ultricies nulla. Nulla consectetur non nunc vitae congue. Pellentesque rhoncus dictum dapibus. Donec accumsan orci lorem, at sagittis magna luctus vel. Donec et consectetur orci, sed efficitur lorem. Nullam molestie arcu ut consequat dapibus. Nulla efficitur faucibus leo at ullamcorper.
 
-</mutableString>
+</string>
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
