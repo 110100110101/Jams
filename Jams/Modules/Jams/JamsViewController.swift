@@ -51,7 +51,7 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
     // MARK: - UISearchBarDelegate Methods
     
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        // TODO: Search
+        self.viewModel.search(searchText)
     }
     
     // MARK: - UITableViewDataSource Methods
