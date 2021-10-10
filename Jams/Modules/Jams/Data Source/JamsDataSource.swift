@@ -60,8 +60,14 @@ final class JamsDataSource: JamsViewModelDataSource {
             .disposed(by: self.disposeBag)
     }
     
-    func toggleFavorite(_ isFavorite: Bool, jam: FetchedJam) {
-        // TODO: Toggle it
+    func addJamToFavorites(_ jam: FetchedJam, completion: @escaping (Error?) -> ()) {
+        CoreDataManager.sharedInstance.addFavoriteJam(jam: jam, completion: { (_, error) in
+            completion(error)
+        })
+    }
+    
+    func removeJamToFavorites(_ jam: FetchedJam, completion: @escaping (Error?) -> ()) {
+        
     }
     
     // MARK: - Private Methods
