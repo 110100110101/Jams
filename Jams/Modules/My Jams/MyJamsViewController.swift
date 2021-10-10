@@ -7,7 +7,7 @@
 
 import UIKit
 
-class MyJamsViewController: UIViewController {
+class MyJamsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     // MARK: - Outlets
     
@@ -38,17 +38,57 @@ class MyJamsViewController: UIViewController {
         super.viewDidLoad()
         
         self.navigationItem.title = "My Jams"
+        
+        self.initializeTableViewJamsProperties()
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - UITableViewDataSource Methods
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.viewModel.favoriteJams.value.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: JamTableViewCell.reuseIdentifier, for: indexPath) as! JamTableViewCell
+        
+        let data = self.viewModel.favoriteJams.value[indexPath.row]
+        
+        dequeuedCell.setTrackName(data.jamName)
+        dequeuedCell.setTrackArtwork(url: data.jamArtwork)
+        dequeuedCell.setGenre(data.jamGenre)
+        dequeuedCell.isFavorite = true
+        
+        dequeuedCell.accessoryType = .disclosureIndicator
+        
+        // TODO: Set delegate
+        
+        return dequeuedCell
+    }
+    
+    // MARK: - UITableViewDelegate Methods
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let detailsViewController = JamDetailsViewController()
+        self.navigationController?.pushViewController(detailsViewController, animated: true)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    // MARK: - Private Methods
+    
+    private func initializeTableViewJamsProperties() {
+        
+        let nib = UINib(nibName: JamTableViewCell.reuseIdentifier, bundle: nil)
+        self.tableViewFavoriteJams.register(nib, forCellReuseIdentifier: JamTableViewCell.reuseIdentifier)
+        
+        self.tableViewFavoriteJams.dataSource = self
+        self.tableViewFavoriteJams.delegate = self
+        self.tableViewFavoriteJams.rowHeight = 116.0
+    }
 }
