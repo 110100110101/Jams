@@ -67,7 +67,17 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let dequeuedCell = tableView.dequeueReusableCell(withIdentifier: JamTableViewCell.reuseIdentifier, for: indexPath) as! JamTableViewCell
-        // TODO: Configure the cell
+        
+        let data = self.viewModel.jams.value[indexPath.row]
+        
+        dequeuedCell.setTrackName(data.trackName)
+        dequeuedCell.setTrackArtwork(url: data.trackArtwork)
+        dequeuedCell.setGenre(data.genre)
+        dequeuedCell.setShortDescription(data.trackShortDescription)
+        dequeuedCell.isFavorite = data.isFavorite
+        
+        // TODO: Set delegate
+        
         return dequeuedCell
     }
     
