@@ -12,7 +12,7 @@ import Foundation
  */
 protocol Jammable {
     
-    var jamID: Decimal { get }
+    var jamID: Int64 { get }
     var jamName: String { get }
     var jamArtwork: URL { get }
     var jamDescription: String { get }

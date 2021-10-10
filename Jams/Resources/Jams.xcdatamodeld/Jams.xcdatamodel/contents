@@ -3,7 +3,7 @@
     <entity name="FavoriteJam" representedClassName="FavoriteJam" syncable="YES" codeGenerationType="category">
         <attribute name="genre" attributeType="String"/>
         <attribute name="trackArtwork" attributeType="URI"/>
-        <attribute name="trackId" attributeType="Decimal"/>
+        <attribute name="trackId" attributeType="Integer 64" usesScalarValueType="NO"/>
         <attribute name="trackLongDescription" attributeType="String"/>
         <attribute name="trackName" attributeType="String"/>
     </entity>

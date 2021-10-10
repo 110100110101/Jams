@@ -15,8 +15,8 @@ class FavoriteJam: NSManagedObject {
 
 extension FavoriteJam: Jammable {
 
-    var jamID: Decimal {
-        return self.trackId!.decimalValue
+    var jamID: Int64 {
+        return self.trackId!.int64Value
     }
     
     var jamName: String {

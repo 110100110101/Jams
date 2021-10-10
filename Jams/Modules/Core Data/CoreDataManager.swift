@@ -123,7 +123,7 @@ final class CoreDataManager {
      
      - Note: `completion` is invoked on main thread
      */
-    public func fetchFavoriteJam(withTrackID trackID: Decimal, completion: @escaping (FavoriteJam?, Error?) -> ()) {
+    public func fetchFavoriteJam(withTrackID trackID: Int64, completion: @escaping (FavoriteJam?, Error?) -> ()) {
         
         guard let persistentContainer = self.persistentContainer.value else {
             DispatchQueue.main.async {
@@ -137,7 +137,7 @@ final class CoreDataManager {
         
         let fetchRequest: NSFetchRequest<FavoriteJam> = FavoriteJam.fetchRequest()
         
-        let predicate = NSPredicate(format: "trackId == %@", argumentArray: [NSDecimalNumber(decimal: trackID)])
+        let predicate = NSPredicate(format: "trackId == %@", argumentArray: [NSNumber(value: trackID)])
         fetchRequest.predicate = predicate
         fetchRequest.fetchLimit = 1
         

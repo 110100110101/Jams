@@ -12,7 +12,7 @@ import Foundation
  */
 class FetchedJam: Decodable {
     
-    public var trackId: Decimal
+    public var trackId: Int64
     public var trackName: String
     public var trackArtwork: URL
     public var trackLongDescription: String
@@ -23,7 +23,7 @@ class FetchedJam: Decodable {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        self.trackId = try container.decode(Decimal.self, forKey: .trackId)
+        self.trackId = try container.decode(Int64.self, forKey: .trackId)
         self.trackName = try container.decode(String.self, forKey: .trackName)
         self.trackArtwork = try container.decode(URL.self, forKey: .trackArtwork)
         self.trackLongDescription = try container.decode(String.self, forKey: .trackLongDescription)
@@ -42,7 +42,7 @@ class FetchedJam: Decodable {
 
 extension FetchedJam: Jammable {
     
-    var jamID: Decimal {
+    var jamID: Int64 {
         return self.trackId
     }
     
