@@ -45,4 +45,39 @@ final class JamsDataSource: JamsViewModelDataSource {
     func toggleFavorite(_ isFavorite: Bool, jam: FetchedJam) {
         // TODO: Toggle it
     }
+    
+    // MARK: - Private Methods
+    
+    /**
+     Sets the `isFavorite` field to true of the `fetchedJams`, if their IDs was found on `favoriteJams`
+     
+     - parameter fetchedJams: Jams thats need an alignment with `isFavorite` field
+     - parameter favoriteJams: List of jams where the data (isFavorite) will be come from
+     - parameter completion: Invoked once the alignment was finished
+     */
+    private func matchFetchedJams(fetchedJams: [FetchedJam],
+                                  fromFavoriteJams favoriteJams: [FavoriteJam],
+                                  completion: @escaping ([FetchedJam]) -> ()) {
+        
+        DispatchQueue.global(qos: .userInteractive).async {
+         
+            // Create set of IDs from favorite jams
+            
+            let favoriteJamsIDs = Set(favoriteJams.map({ favoriteJam in
+                return favoriteJam.jamID
+            }))
+            
+            // Now, align the data
+            
+            for fetchedJam in fetchedJams {
+                fetchedJam.isFavorite = favoriteJamsIDs.contains(fetchedJam.jamID)
+            }
+            
+            // Dispatch it
+            
+            DispatchQueue.main.async {
+                completion(fetchedJams)
+            }
+        }
+    }
 }
