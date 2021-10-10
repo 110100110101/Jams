@@ -223,4 +223,44 @@ final class CoreDataManager {
             completion(nil, error)
         }
     }
+    
+    /**
+     Deletes the favorite jam in store
+     
+     - parameter jam: Jam that gonna be deleted
+     - parameter completion: Invoked whenever the deletion has been successful or not
+     
+     - Note: If there's no jam found in the store, it will still be considered as successful
+     */
+    public func deleteFavoriteJam(_ jam: Jammable, completion: @escaping (Error?) -> ()) {
+        
+        self.fetchFavoriteJam(withTrackID: jam.jamID, completion: { (favoriteJam, error) in
+            
+            if let error = error {
+                completion(error)
+            }
+            else if let favoriteJam = favoriteJam {
+          
+                guard let persistentContainer = self.persistentContainer.value else {
+                    let error = NSError(domain: "com.yting.Jams", code: 1000, userInfo: nil)
+                    completion(error)
+                    return
+                }
+                
+                let mainContext = persistentContainer.viewContext
+                mainContext.delete(favoriteJam)
+                
+                do {
+                    try mainContext.save()
+                    completion(nil)
+                }
+                catch {
+                    completion(error)
+                }
+            }
+            else {
+                completion(nil)
+            }
+        })
+    }
 }
