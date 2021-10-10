@@ -25,4 +25,13 @@ protocol MyJamsViewModelDataSource {
 
 class MyJamsViewModel {
     
+    // MARK: - Fields
+    
+    private let dataSource: MyJamsViewModelDataSource
+    
+    // MARK: - Initializer
+    
+    init(dataSource: MyJamsViewModelDataSource) {
+        self.dataSource = dataSource
+    }
 }
