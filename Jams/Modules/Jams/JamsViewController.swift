@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, UISearchControllerDelegate {
+class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, UISearchControllerDelegate, JamTableViewCellDelegate {
     
     // MARK: - Outlets
     
@@ -101,7 +101,7 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
         
         dequeuedCell.accessoryType = .disclosureIndicator
         
-        // TODO: Set delegate
+        dequeuedCell.delegate = self
         
         return dequeuedCell
     }
@@ -114,6 +114,23 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
         self.navigationController?.pushViewController(detailsViewController, animated: true)
         
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    // MARK: - JamTableViewCellDelegate Methods
+    
+    func jamTableViewCellButtonFavoriteDidTap(_ cell: JamTableViewCell) {
+        
+        guard let cellIndexPath = self.tableViewJams.indexPath(for: cell) else {
+            return
+        }
+        
+        let fetchedJam = self.viewModel.jams.value[cellIndexPath.row]
+        if fetchedJam.isFavorite {
+            self.viewModel.removeJamOnFavorites(fetchedJam)
+        }
+        else {
+            self.viewModel.addJamToFavorites(fetchedJam)
+        }
     }
     
     // MARK: - Private Methods
