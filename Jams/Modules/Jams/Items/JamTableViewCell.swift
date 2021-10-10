@@ -111,10 +111,10 @@ class JamTableViewCell: UITableViewCell {
         
         let systemImageName: String
         if isFavorite {
-            systemImageName = "heart"
+            systemImageName = "heart.fill"
         }
         else {
-            systemImageName = "heart.fill"
+            systemImageName = "heart"
         }
         
         let image = UIImage(systemName: systemImageName)
