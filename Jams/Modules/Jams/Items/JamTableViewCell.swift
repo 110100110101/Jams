@@ -32,7 +32,7 @@ class JamTableViewCell: UITableViewCell {
     @IBOutlet private var labelTrackName: UILabel!
     @IBOutlet private var buttonFavorite: UIButton!
     @IBOutlet private var labelGenre: UILabel!
-    @IBOutlet private var buttonPurchase: UIButton! // This button also doubles as the price tag
+    @IBOutlet private var labelShortDescription: UILabel!
     
     // MARK: - Fields
     
@@ -78,7 +78,7 @@ class JamTableViewCell: UITableViewCell {
         self.imageViewTrackArtwork.image = nil
         self.labelTrackName.text = nil
         self.labelGenre.text = nil
-        self.buttonPurchase.setTitle(nil, for: .normal)
+        self.labelShortDescription.text = nil
     }
     
     // MARK: - Public Methods
@@ -100,15 +100,6 @@ class JamTableViewCell: UITableViewCell {
     
     public func setGenre(_ genre: String) {
         self.labelGenre.text = genre
-    }
-    
-    /**
-     Assigns price to the track
-     
-     - Note: Argument passed is rendered as-is, so format it before assigning it here.
-     */
-    public func setPrice(_ price: String) {
-        self.buttonPurchase.setTitle(price, for: .normal)
     }
     
     // MARK: - Private Methods
