@@ -8,7 +8,28 @@
 import UIKit
 
 class MyJamsViewController: UIViewController {
-
+    
+    // MARK: - Fields
+    
+    private let viewModel: MyJamsViewModel
+    
+    // MARK: - Initializers
+    
+    convenience init() {
+        fatalError("Use the designated initializer init(viewModel:)!")
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented, so use init(viewModel:)!")
+    }
+    
+    init(viewModel: MyJamsViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    // MARK: - View Lifecycle
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
