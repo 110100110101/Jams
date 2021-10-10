@@ -93,6 +93,8 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
         
         let detailsViewController = JamDetailsViewController()
         self.navigationController?.pushViewController(detailsViewController, animated: true)
+        
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     // MARK: - Private Methods
