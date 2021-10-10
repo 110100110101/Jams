@@ -12,6 +12,7 @@
 		2D90636727117EBD009E8D58 /* ITunes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90636627117EBD009E8D58 /* ITunes.swift */; };
 		2D90636A271181F3009E8D58 /* JamsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D906369271181F3009E8D58 /* JamsDataSource.swift */; };
 		2D90636D27119126009E8D58 /* Jams.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D90636B27119126009E8D58 /* Jams.xcdatamodeld */; };
+		2D90638D2712A478009E8D58 /* FetchedJam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90638C2712A478009E8D58 /* FetchedJam.swift */; };
 		2DA7FCDD270DCCA300F7920C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA7FCDC270DCCA300F7920C /* AppDelegate.swift */; };
 		2DA7FCE6270DCCA400F7920C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7FCE5270DCCA400F7920C /* Assets.xcassets */; };
 		2DA7FCE9270DCCA400F7920C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7FCE7270DCCA400F7920C /* LaunchScreen.storyboard */; };
@@ -32,6 +33,7 @@
 		2D90636627117EBD009E8D58 /* ITunes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunes.swift; sourceTree = "<group>"; };
 		2D906369271181F3009E8D58 /* JamsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JamsDataSource.swift; sourceTree = "<group>"; };
 		2D90636C27119126009E8D58 /* Jams.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Jams.xcdatamodel; sourceTree = "<group>"; };
+		2D90638C2712A478009E8D58 /* FetchedJam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedJam.swift; sourceTree = "<group>"; };
 		2DA7FCD9270DCCA300F7920C /* Jams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA7FCDC270DCCA300F7920C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DA7FCE5270DCCA400F7920C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -76,9 +78,10 @@
 			path = "Data Source";
 			sourceTree = "<group>";
 		};
-		2D90636E2711F2DF009E8D58 /* Models */ = {
+		2D90638B2712A465009E8D58 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2D90638C2712A478009E8D58 /* FetchedJam.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -114,6 +117,7 @@
 		2DA7FCF0270DCE7400F7920C /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2D90638B2712A465009E8D58 /* Models */,
 				2DA7FCF6270DD39E00F7920C /* Jams */,
 				2DA7FCFB270DDFEC00F7920C /* My Jams */,
 				2DA7FD0D270F31D800F7920C /* Jam Details */,
@@ -128,7 +132,6 @@
 				2DA7FCF8270DD3BE00F7920C /* JamsViewController.xib */,
 				2D90636227115DC7009E8D58 /* JamsViewModel.swift */,
 				2DA7FCF7270DD3BE00F7920C /* JamsViewController.swift */,
-				2D90636E2711F2DF009E8D58 /* Models */,
 				2DA7FD01270DE25400F7920C /* Items */,
 				2D906368271181D7009E8D58 /* Data Source */,
 			);
@@ -311,6 +314,7 @@
 				2DA7FD04270DE26D00F7920C /* JamTableViewCell.swift in Sources */,
 				2D90636727117EBD009E8D58 /* ITunes.swift in Sources */,
 				2DA7FCFE270DDFFE00F7920C /* MyJamsViewController.swift in Sources */,
+				2D90638D2712A478009E8D58 /* FetchedJam.swift in Sources */,
 				2D90636327115DC7009E8D58 /* JamsViewModel.swift in Sources */,
 				2D90636A271181F3009E8D58 /* JamsDataSource.swift in Sources */,
 				2DA7FCF9270DD3BE00F7920C /* JamsViewController.swift in Sources */,
