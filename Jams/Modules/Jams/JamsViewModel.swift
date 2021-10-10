@@ -84,8 +84,12 @@ class JamsViewModel {
     }
     
     /**
-     Marks/Unmarks the given jam as favorite based on the `isFavorite` argument
+     Adds the jam to favorites
      */
-    public func mark(jam: FetchedJam, isFavorite: Bool) {
+    public func addJamToFavorites(_ jam: FetchedJam) {
+        
+        self.dataSource.addJamToFavorites(jam, completion: { (error) in
+            jam.isFavorite = (error == nil)
+        })
     }
 }
