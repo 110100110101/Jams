@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 protocol JamTableViewCellDelegate: AnyObject {
     
@@ -84,12 +85,19 @@ class JamTableViewCell: UITableViewCell {
     /**
      Sets the artwork
      
-     - parameter url: URL where the artwork resides. Specify `nil` if you want the view to use placeholder
+     - parameter url: URL where the artwork resides.
      
-     - Note: Placeholder would be also served while the view loads the artwork from the `url`. If an error has occurred, it would also use the placeholder.
+     - Note: If an error has occurred, it would use the internal placeholder instead
      */
-    public func setTrackArtwork(url: URL?) {
-        // TODO: Set the track's artwork using the provided URL, if possible
+    public func setTrackArtwork(url: URL) {
+        
+        self.imageViewTrackArtwork.kf.indicatorType = .activity
+        self.imageViewTrackArtwork.kf.setImage(with: url,
+                                               placeholder: nil, // TODO: Provide a placeholder
+                                               options: [
+                                                .scaleFactor(UIScreen.main.scale),
+                                                .transition(.fade(0.3))
+                                               ])
     }
     
     public func setTrackName(_ name: String) {
