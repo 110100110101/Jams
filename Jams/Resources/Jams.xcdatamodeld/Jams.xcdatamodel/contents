@@ -5,9 +5,10 @@
         <attribute name="isFavorite" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="price" attributeType="Decimal" defaultValueString="0.0"/>
         <attribute name="trackArtwork" attributeType="URI"/>
+        <attribute name="trackDescription" optional="YES" attributeType="String"/>
         <attribute name="trackName" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Jam" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="Jam" positionX="-63" positionY="-18" width="128" height="119"/>
     </elements>
 </model>
