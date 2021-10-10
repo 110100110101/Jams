@@ -63,15 +63,21 @@ class JamTableViewCell: UITableViewCell {
     
     // MARK: - View Lifecycle
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        /*
+         Clear the data to prevent the data assigned in nib to be rendered,
+         if the consumer forgots to set data to it
+         */
+        self.clearData()
+    }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
-        // Reset the data assigned to prevent data from other jams to leak on other instances
-        
-        self.imageViewTrackArtwork.image = nil
-        self.labelTrackName.text = nil
-        self.labelGenre.text = nil
-        self.labelShortDescription.text = nil
+        // Clear the data assigned to prevent data from other jams to leak on other instances
+        self.clearData()
     }
     
     // MARK: - Public Methods
@@ -109,5 +115,16 @@ class JamTableViewCell: UITableViewCell {
         
         let image = UIImage(systemName: systemImageName)
         self.buttonFavorite.setImage(image, for: .normal)
+    }
+    
+    /**
+     Clears the data assigned to the views in this instance
+     */
+    private func clearData() {
+        
+        self.imageViewTrackArtwork.image = nil
+        self.labelTrackName.text = nil
+        self.labelGenre.text = nil
+        self.labelShortDescription.text = nil
     }
 }
