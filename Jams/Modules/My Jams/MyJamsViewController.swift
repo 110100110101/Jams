@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 class MyJamsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -16,6 +17,8 @@ class MyJamsViewController: UIViewController, UITableViewDataSource, UITableView
     // MARK: - Fields
     
     private let viewModel: MyJamsViewModel
+    
+    private let disposeBag = DisposeBag()
     
     // MARK: - Initializers
     
@@ -40,6 +43,8 @@ class MyJamsViewController: UIViewController, UITableViewDataSource, UITableView
         self.navigationItem.title = "My Jams"
         
         self.initializeTableViewJamsProperties()
+        
+        self.configureBindings()
     }
 
     // MARK: - UITableViewDataSource Methods
@@ -90,5 +95,15 @@ class MyJamsViewController: UIViewController, UITableViewDataSource, UITableView
         self.tableViewFavoriteJams.dataSource = self
         self.tableViewFavoriteJams.delegate = self
         self.tableViewFavoriteJams.rowHeight = 116.0
+    }
+    
+    private func configureBindings() {
+        
+        self.viewModel.favoriteJams
+            .asDriver()
+            .drive(onNext: { [weak self] _ in
+                self?.tableViewFavoriteJams.reloadData()
+            })
+            .disposed(by: self.disposeBag)
     }
 }
