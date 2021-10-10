@@ -108,6 +108,12 @@ class JamTableViewCell: UITableViewCell {
         self.labelGenre.text = genre
     }
     
+    // MARK: - Action Methods
+    
+    @IBAction private func buttonFavoriteDidTap() {
+        self.delegate?.jamTableViewCellButtonFavoriteDidTap(self)
+    }
+    
     // MARK: - Private Methods
     
     private func toggleFavoriteButton(isFavorite: Bool) {

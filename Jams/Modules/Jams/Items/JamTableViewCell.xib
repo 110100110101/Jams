@@ -44,6 +44,9 @@
                         </constraints>
                         <color key="tintColor" systemColor="systemPinkColor"/>
                         <state key="normal" image="heart" catalog="system"/>
+                        <connections>
+                            <action selector="buttonFavoriteDidTap" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qgr-Uo-QJr"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>
