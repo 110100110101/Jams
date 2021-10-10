@@ -27,8 +27,15 @@ final class JamsDataSource: JamsViewModelDataSource {
             .request(.search(parameters: parameters))
             .filterSuccessfulStatusCodes()
             .subscribe(onSuccess: { (response) in
-                // TODO: Decode the data
-                completion([], nil)
+                
+                let decoder = JSONDecoder()
+                do {
+                    let fetchedJams = try decoder.decode(FetchedJams.self, from: response.data)
+                    completion(fetchedJams.jams, nil)
+                }
+                catch {
+                    completion(nil, error)
+                }
             }, onFailure: { (error) in
                 completion(nil, error)
             })
