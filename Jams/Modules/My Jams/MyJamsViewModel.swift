@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import RxCocoa
 
 /**
  A data source object which manages the data of the My Jams View
@@ -24,6 +25,20 @@ protocol MyJamsViewModelDataSource {
 }
 
 class MyJamsViewModel {
+    
+    // MARK: - Observable Fields
+    
+    /**
+     Observable field which contains all the favorite jams of the user
+     
+     - Note: This is updated whenever the `getAllFavoriteJams(completion:)` has been invoked
+     */
+    public let favoriteJams = BehaviorRelay<[FavoriteJam]>(value: [])
+    
+    /**
+     Determines whether there's an error occurred while fetching for the favorite jams
+     */
+    public let hasEncounteredAnErrorWhileFetching = BehaviorRelay<Bool>(value: false)
     
     // MARK: - Fields
     
