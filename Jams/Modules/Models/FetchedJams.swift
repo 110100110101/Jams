@@ -12,12 +12,12 @@ import Foundation
  */
 class FetchedJams: Decodable {
     
-    public let jams: [FetchedJam]
+    public let jams: [Jam]
     
     required init(from decoder: Decoder) throws {
         
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        self.jams = try container.decode([FetchedJam].self, forKey: .jams)
+        self.jams = try container.decode([Jam].self, forKey: .jams)
     }
 }
 
