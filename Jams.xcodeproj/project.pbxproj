@@ -12,7 +12,6 @@
 		2D90636727117EBD009E8D58 /* ITunes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90636627117EBD009E8D58 /* ITunes.swift */; };
 		2D90636A271181F3009E8D58 /* JamsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D906369271181F3009E8D58 /* JamsDataSource.swift */; };
 		2D90636D27119126009E8D58 /* Jams.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2D90636B27119126009E8D58 /* Jams.xcdatamodeld */; };
-		2D90638D2712A478009E8D58 /* FetchedJam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90638C2712A478009E8D58 /* FetchedJam.swift */; };
 		2D90638F2712ADEA009E8D58 /* FetchedJams.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D90638E2712ADEA009E8D58 /* FetchedJams.swift */; };
 		2D9063912712B1B0009E8D58 /* Jam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9063902712B1B0009E8D58 /* Jam.swift */; };
 		2DA7FCDD270DCCA300F7920C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA7FCDC270DCCA300F7920C /* AppDelegate.swift */; };
@@ -35,7 +34,6 @@
 		2D90636627117EBD009E8D58 /* ITunes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ITunes.swift; sourceTree = "<group>"; };
 		2D906369271181F3009E8D58 /* JamsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JamsDataSource.swift; sourceTree = "<group>"; };
 		2D90636C27119126009E8D58 /* Jams.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Jams.xcdatamodel; sourceTree = "<group>"; };
-		2D90638C2712A478009E8D58 /* FetchedJam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedJam.swift; sourceTree = "<group>"; };
 		2D90638E2712ADEA009E8D58 /* FetchedJams.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchedJams.swift; sourceTree = "<group>"; };
 		2D9063902712B1B0009E8D58 /* Jam.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jam.swift; sourceTree = "<group>"; };
 		2DA7FCD9270DCCA300F7920C /* Jams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jams.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,7 +85,6 @@
 			children = (
 				2D9063902712B1B0009E8D58 /* Jam.swift */,
 				2D90638E2712ADEA009E8D58 /* FetchedJams.swift */,
-				2D90638C2712A478009E8D58 /* FetchedJam.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -321,7 +318,6 @@
 				2D90636727117EBD009E8D58 /* ITunes.swift in Sources */,
 				2DA7FCFE270DDFFE00F7920C /* MyJamsViewController.swift in Sources */,
 				2D9063912712B1B0009E8D58 /* Jam.swift in Sources */,
-				2D90638D2712A478009E8D58 /* FetchedJam.swift in Sources */,
 				2D90638F2712ADEA009E8D58 /* FetchedJams.swift in Sources */,
 				2D90636327115DC7009E8D58 /* JamsViewModel.swift in Sources */,
 				2D90636A271181F3009E8D58 /* JamsDataSource.swift in Sources */,
