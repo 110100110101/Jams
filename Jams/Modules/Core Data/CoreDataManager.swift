@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import RxCocoa
 
 final class CoreDataManager {
     
@@ -16,12 +17,29 @@ final class CoreDataManager {
     
     // MARK: - Fields
     
-    public let persistentContainer: NSPersistentContainer
-    
+    /**
+     Instance of persistent container that can be used in the app to manage core data.
+     
+     This can be also observed to validate its preparedness
+     
+     - Note: Will return `nil`, if the stack aren't ready yet
+     */
+    public let persistentContainer = BehaviorRelay<NSPersistentContainer?>(value: nil)
+    private var _persistentContainer: NSPersistentContainer
+        
     // MARK: - Initializer
     
     private init() {
-        self.persistentContainer = NSPersistentContainer(name: "Jams")
+        
+        self._persistentContainer = NSPersistentContainer(name: "Jams")
+        self._persistentContainer.loadPersistentStores(completionHandler: { [weak self] (description, error) in
+            
+            guard let self = self else {
+                return
+            }
+            
+            self.persistentContainer.accept(self._persistentContainer)
+        })
     }
     
     // MARK: - Public Methods
@@ -35,8 +53,15 @@ final class CoreDataManager {
      */
     public func fetchAllFavoriteJams(completion: @escaping ([FavoriteJam]?, Error?) -> ()) {
         
-        let backgroundContext = self.persistentContainer.newBackgroundContext()
+        guard let persistentContainer = self.persistentContainer.value else {
+            DispatchQueue.main.async {
+                let error = NSError(domain: "com.yting.Jams", code: 1000, userInfo: nil)
+                completion(nil, error)
+            }
+            return
+        }
         
+        let backgroundContext = persistentContainer.newBackgroundContext()
         let fetchRequest: NSFetchRequest<FavoriteJam> = FavoriteJam.fetchRequest()
         let asynchronousFetchRequest = NSAsynchronousFetchRequest<FavoriteJam>(fetchRequest: fetchRequest) { result in
             
@@ -49,7 +74,7 @@ final class CoreDataManager {
             guard let favoriteJams = result.finalResult else {
                 
                 DispatchQueue.main.async {
-                    let error = NSError(domain: "com.yting.Jams", code: 4000, userInfo: nil)
+                    let error = NSError(domain: "com.yting.Jams", code: 1001, userInfo: nil)
                     completion(nil, error)
                 }
                 
@@ -65,7 +90,7 @@ final class CoreDataManager {
                 
                 var mainFavoriteJams = [FavoriteJam]()
                 
-                let mainContext = self.persistentContainer.viewContext
+                let mainContext = persistentContainer.viewContext
                 for favoriteJam in favoriteJams {
                     
                     let objectID = favoriteJam.objectID
