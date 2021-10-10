@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
+class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, UISearchControllerDelegate {
     
     // MARK: - Outlets
     
@@ -19,6 +19,13 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
     private let viewModel: JamsViewModel
     
     private let searchController = UISearchController(searchResultsController: nil)
+    
+    /**
+     Last search term of the user
+     
+     - Note: Used to fill the searchBar after tapping the cancel button.
+     */
+    private var lastSearchedTerm: String?
     
     private let disposeBag = DisposeBag()
     
@@ -45,12 +52,24 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
         self.navigationItem.title = "Jams"
         
         self.navigationItem.searchController = self.searchController
+        self.searchController.obscuresBackgroundDuringPresentation = false
+        self.searchController.delegate = self
         self.searchController.searchBar.delegate = self
         self.searchController.searchBar.placeholder = "Find Your Jams!"
         
         self.initializeTableViewJamsProperties()
         
         self.configureBindings()
+    }
+    
+    // MARK: - UISearchControllerDelegate Methods
+    
+    func didDismissSearchController(_ searchController: UISearchController) {
+        searchController.searchBar.text = self.lastSearchedTerm
+    }
+    
+    func willDismissSearchController(_ searchController: UISearchController) {
+        self.lastSearchedTerm = searchController.searchBar.text
     }
     
     // MARK: - UISearchBarDelegate Methods
