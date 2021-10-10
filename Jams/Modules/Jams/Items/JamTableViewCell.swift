@@ -44,18 +44,9 @@ class JamTableViewCell: UITableViewCell {
     /**
      A boolean value that determines whether this jam is one of his/her favorites
      */
-    public var isFavorite: Bool {
-        
-        get {
-            return self._isFavorite
-        }
-        
-        set (isFavorite) {
-            
-            if isFavorite != self._isFavorite {
-                self._isFavorite = isFavorite
-                self.toggleFavoriteButton(isFavorite: isFavorite)
-            }
+    public var isFavorite: Bool = false {
+        didSet {
+            self.toggleFavoriteButton(isFavorite: self.isFavorite)
         }
     }
     
