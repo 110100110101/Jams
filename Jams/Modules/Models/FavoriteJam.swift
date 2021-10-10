@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-@objc(Jam)
+@objc(FavoriteJam)
 class FavoriteJam: NSManagedObject {
     
 }
