@@ -23,6 +23,7 @@
 		2D9D921E271421BA00FB32DD /* JamDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D921D271421BA00FB32DD /* JamDetailsDataSource.swift */; };
 		2D9D92262714881A00FB32DD /* JamsEmptyStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D9D92252714881A00FB32DD /* JamsEmptyStateView.xib */; };
 		2D9D922B27148D1400FB32DD /* JamsNoResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D9D922A27148D1400FB32DD /* JamsNoResultsView.xib */; };
+		2D9D922F2714900C00FB32DD /* JamsErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D9D922E2714900C00FB32DD /* JamsErrorView.xib */; };
 		2DA7FCDD270DCCA300F7920C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA7FCDC270DCCA300F7920C /* AppDelegate.swift */; };
 		2DA7FCE6270DCCA400F7920C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7FCE5270DCCA400F7920C /* Assets.xcassets */; };
 		2DA7FCE9270DCCA400F7920C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7FCE7270DCCA400F7920C /* LaunchScreen.storyboard */; };
@@ -54,6 +55,7 @@
 		2D9D921D271421BA00FB32DD /* JamDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JamDetailsDataSource.swift; sourceTree = "<group>"; };
 		2D9D92252714881A00FB32DD /* JamsEmptyStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JamsEmptyStateView.xib; sourceTree = "<group>"; };
 		2D9D922A27148D1400FB32DD /* JamsNoResultsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JamsNoResultsView.xib; sourceTree = "<group>"; };
+		2D9D922E2714900C00FB32DD /* JamsErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JamsErrorView.xib; sourceTree = "<group>"; };
 		2DA7FCD9270DCCA300F7920C /* Jams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA7FCDC270DCCA300F7920C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DA7FCE5270DCCA400F7920C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 			children = (
 				2D9D922827148BAE00FB32DD /* Clean Run */,
 				2D9D922927148BCA00FB32DD /* No Results */,
+				2D9D92302714901100FB32DD /* Error */,
 			);
 			path = "Empty State";
 			sourceTree = "<group>";
@@ -156,6 +159,14 @@
 				2D9D922A27148D1400FB32DD /* JamsNoResultsView.xib */,
 			);
 			path = "No Results";
+			sourceTree = "<group>";
+		};
+		2D9D92302714901100FB32DD /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				2D9D922E2714900C00FB32DD /* JamsErrorView.xib */,
+			);
+			path = Error;
 			sourceTree = "<group>";
 		};
 		2DA7FCD0270DCCA300F7920C = {
@@ -338,6 +349,7 @@
 				2DA7FCE6270DCCA400F7920C /* Assets.xcassets in Resources */,
 				2DA7FD05270DE26D00F7920C /* JamTableViewCell.xib in Resources */,
 				2DA7FCFF270DDFFE00F7920C /* MyJamsViewController.xib in Resources */,
+				2D9D922F2714900C00FB32DD /* JamsErrorView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
