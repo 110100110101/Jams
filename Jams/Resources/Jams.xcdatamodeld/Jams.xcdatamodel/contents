@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="18154" systemVersion="20G165" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="FavoriteJam" representedClassName="FavoriteJam" syncable="YES" codeGenerationType="category">
+        <attribute name="currency" attributeType="String"/>
         <attribute name="genre" attributeType="String"/>
         <attribute name="trackArtwork" attributeType="URI"/>
         <attribute name="trackId" attributeType="Integer 64" usesScalarValueType="NO"/>
         <attribute name="trackLongDescription" attributeType="String"/>
         <attribute name="trackName" attributeType="String"/>
+        <attribute name="trackPrice" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
     </entity>
     <elements>
-        <element name="FavoriteJam" positionX="-63" positionY="-18" width="128" height="104"/>
+        <element name="FavoriteJam" positionX="-63" positionY="-18" width="128" height="134"/>
     </elements>
 </model>
