@@ -109,8 +109,12 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
     // MARK: - UITableViewDelegate Methods
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+                
+        let jam = self.viewModel.jams.value[indexPath.row]
         
-        let detailsViewController = JamDetailsViewController()
+        let detailsDataSource = JamDetailsDataSource()
+        let detailsViewModel = JamDetailsViewModel(jam: jam, isFavorite: true, dataSource: detailsDataSource)
+        let detailsViewController = JamDetailsViewController(viewModel: detailsViewModel)
         self.navigationController?.pushViewController(detailsViewController, animated: true)
         
         tableView.deselectRow(at: indexPath, animated: true)
