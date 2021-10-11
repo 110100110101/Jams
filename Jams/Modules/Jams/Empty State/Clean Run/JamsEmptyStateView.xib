@@ -15,18 +15,18 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3nR-ec-Ix1">
-                    <rect key="frame" x="107" y="323" width="200" height="250"/>
+                    <rect key="frame" x="16" y="323.5" width="382" height="249.5"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="GrO-pc-0IG">
-                            <rect key="frame" x="0.0" y="0.5" width="200" height="199"/>
+                            <rect key="frame" x="91" y="0.5" width="200" height="199"/>
                             <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="200" id="Hg3-SF-D6a"/>
                                 <constraint firstAttribute="width" constant="200" id="uRh-MP-txF"/>
                             </constraints>
                         </imageView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Your Jams!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1W-mf-Jh5">
-                            <rect key="frame" x="-1" y="216" width="202" height="34"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Find Your Jams!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1W-mf-Jh5">
+                            <rect key="frame" x="0.0" y="216" width="382" height="33.5"/>
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="28"/>
                             <color key="textColor" systemColor="systemGray2Color"/>
                             <nil key="highlightedColor"/>
@@ -34,12 +34,14 @@
                     </subviews>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="GrO-pc-0IG" secondAttribute="trailing" id="ARu-um-pwq"/>
-                        <constraint firstItem="GrO-pc-0IG" firstAttribute="leading" secondItem="3nR-ec-Ix1" secondAttribute="leading" id="ZvQ-TD-aw6"/>
+                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="GrO-pc-0IG" secondAttribute="trailing" id="ARu-um-pwq"/>
+                        <constraint firstItem="w1W-mf-Jh5" firstAttribute="leading" secondItem="3nR-ec-Ix1" secondAttribute="leading" id="Qn7-xq-ZHn"/>
+                        <constraint firstItem="GrO-pc-0IG" firstAttribute="centerX" secondItem="3nR-ec-Ix1" secondAttribute="centerX" id="WGF-OS-1Wh"/>
+                        <constraint firstItem="GrO-pc-0IG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3nR-ec-Ix1" secondAttribute="leading" id="ZvQ-TD-aw6"/>
                         <constraint firstAttribute="bottom" secondItem="w1W-mf-Jh5" secondAttribute="bottom" id="i0C-Ki-Eh6"/>
                         <constraint firstItem="GrO-pc-0IG" firstAttribute="top" secondItem="3nR-ec-Ix1" secondAttribute="top" id="wH7-6j-qsu"/>
                         <constraint firstItem="w1W-mf-Jh5" firstAttribute="top" secondItem="GrO-pc-0IG" secondAttribute="bottom" constant="16" id="yF7-HS-Nd4"/>
-                        <constraint firstItem="w1W-mf-Jh5" firstAttribute="centerX" secondItem="3nR-ec-Ix1" secondAttribute="centerX" id="zGh-kt-tZX"/>
+                        <constraint firstAttribute="trailing" secondItem="w1W-mf-Jh5" secondAttribute="trailing" id="yhI-QR-FqP"/>
                     </constraints>
                 </view>
             </subviews>
@@ -47,6 +49,8 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="3nR-ec-Ix1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="1Q0-uU-JGv"/>
+                <constraint firstItem="3nR-ec-Ix1" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Axr-Vo-hfT"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="3nR-ec-Ix1" secondAttribute="trailing" constant="16" id="KeI-zf-ECk"/>
                 <constraint firstItem="3nR-ec-Ix1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bCF-hQ-p45"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>
