@@ -49,4 +49,25 @@ class MyJamsViewModel {
     init(dataSource: MyJamsViewModelDataSource) {
         self.dataSource = dataSource
     }
+    
+    // MARK: - Public Methods
+    
+    /**
+     Fetch all the favorite jams
+     
+     - Note: Invoking this method updates the value of `favoriteJams` field
+     */
+    public func getAllFavoriteJams() {
+        
+        self.dataSource.getAllFavoriteJams(completion: { [weak self] (favoriteJams, error) in
+            
+            if error != nil {
+                self?.hasEncounteredAnErrorWhileFetching.accept(true)
+            }
+            else if let favoriteJams = favoriteJams {
+                self?.favoriteJams.accept(favoriteJams)
+                self?.hasEncounteredAnErrorWhileFetching.accept(false)
+            }
+        })
+    }
 }
