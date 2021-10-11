@@ -24,23 +24,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let jamsDataSource = JamsDataSource()
         let jamsViewModel = JamsViewModel(dataSource: jamsDataSource)
-        let jamsViewController = JamsViewController(viewModel: jamsViewModel)
+        let jamsViewController = JamsViewController(viewModel: jamsViewModel) // Restoration ID was set at nib
         let jamsNavigationController = UINavigationController(rootViewController: jamsViewController)
-        jamsNavigationController.tabBarItem.title = "Jams"
+        jamsNavigationController.restorationIdentifier = "Jams_UINavigationController"
         
         let jamsImage = UIImage(systemName: "play.tv.fill")
         jamsNavigationController.tabBarItem.image = jamsImage
+        jamsNavigationController.tabBarItem.title = "Jams"
         
         let myJamsDataSource = MyJamsDataSource()
         let myJamsViewModel = MyJamsViewModel(dataSource: myJamsDataSource)
-        let myJamsViewController = MyJamsViewController(viewModel: myJamsViewModel)
+        let myJamsViewController = MyJamsViewController(viewModel: myJamsViewModel) // Restoration ID was set at nib
         let myJamsNavigationController = UINavigationController(rootViewController: myJamsViewController)
-        myJamsNavigationController.tabBarItem.title = "My Jams"
+        myJamsNavigationController.restorationIdentifier = "MyJams_UINavigationController"
         
         let myJamsImage = UIImage(systemName: "heart.fill")
         myJamsNavigationController.tabBarItem.image = myJamsImage
+        myJamsNavigationController.tabBarItem.title = "My Jams"
         
         let tabBarController = UITabBarController()
+        tabBarController.restorationIdentifier = "Root_UITabBarController"
         tabBarController.viewControllers = [jamsNavigationController, myJamsNavigationController]
         
         self.window?.rootViewController = tabBarController
