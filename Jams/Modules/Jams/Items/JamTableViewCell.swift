@@ -114,6 +114,21 @@ class JamTableViewCell: UITableViewCell {
         self.labelGenre.text = genre
     }
     
+    /**
+     Assigns price to the Jam
+     
+     - Note: Formatting and currency isn't handled on this method, so format it prior to rendering
+     */
+    public func setPrice(_ price: String?) {
+        
+        if let price = price {
+            self.buttonPurchase.setTitle(price, for: .normal)
+        }
+        else {
+            self.buttonPurchase.isHidden = true
+        }
+    }
+    
     // MARK: - Action Methods
     
     @IBAction private func buttonFavoriteDidTap() {
@@ -145,5 +160,7 @@ class JamTableViewCell: UITableViewCell {
         self.labelTrackName.text = nil
         self.labelGenre.text = nil
         self.buttonFavorite.setImage(nil, for: .normal)
+        self.buttonPurchase.isHidden = false
+        self.buttonPurchase.setTitle(nil, for: .normal)
     }
 }
