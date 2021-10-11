@@ -78,17 +78,10 @@ class MyJamsViewModel {
      - parameter completion: Invoked once the operation finishes. It also passes a boolean to indicate if the removal was successful or not.
      */
     public func removeFavoriteJam(_ jam: FavoriteJam, completion: ((Bool) -> ())?) {
-        self.dataSource.removeFavoriteJam(jam, completion: { (error) in
-            
+                
+        self.dataSource.removeFavoriteJam(jam, completion: { [weak self] (error) in
             if error == nil {
-                
-                var favoriteJams = self.favoriteJams.value
-                favoriteJams.removeAll(where: { (favoriteJam) in
-                    return favoriteJam.jamID == jam.jamID
-                })
-                
-                self.favoriteJams.accept(favoriteJams)
-                
+                self?.getAllFavoriteJams()
                 completion?(true)
             }
             else {
