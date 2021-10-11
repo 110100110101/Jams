@@ -240,6 +240,7 @@
 				2D9D92152713125700FB32DD /* MyJamsViewModel.swift */,
 				2DA7FCFC270DDFFE00F7920C /* MyJamsViewController.swift */,
 				2D9D9217271315E300FB32DD /* Data Source */,
+				2D9D9231271493DD00FB32DD /* Empty State */,
 			);
 			path = "My Jams";
 			sourceTree = "<group>";
@@ -260,7 +261,6 @@
 				2D9D921A27141B4800FB32DD /* JamDetailsViewModel.swift */,
 				2DA7FD0E270F31F900F7920C /* JamDetailsViewController.swift */,
 				2D9D921C271421AC00FB32DD /* Data Source */,
-				2D9D9231271493DD00FB32DD /* Empty State */,
 			);
 			path = "Jam Details";
 			sourceTree = "<group>";
