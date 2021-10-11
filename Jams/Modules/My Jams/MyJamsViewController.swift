@@ -76,6 +76,7 @@ class MyJamsViewController: UIViewController, UITableViewDataSource, UITableView
         dequeuedCell.setTrackName(data.jamName)
         dequeuedCell.setTrackArtwork(url: data.jamArtwork)
         dequeuedCell.setGenre(data.jamGenre)
+        dequeuedCell.setPrice(data.formattedTrackPrice)
         dequeuedCell.isFavorite = true
         
         dequeuedCell.accessoryType = .disclosureIndicator
