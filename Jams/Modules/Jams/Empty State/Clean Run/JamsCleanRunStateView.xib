@@ -49,8 +49,8 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="3nR-ec-Ix1" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="1Q0-uU-JGv"/>
-                <constraint firstItem="3nR-ec-Ix1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Axr-Vo-hfT"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3nR-ec-Ix1" secondAttribute="trailing" constant="16" id="KeI-zf-ECk"/>
+                <constraint firstItem="3nR-ec-Ix1" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="Axr-Vo-hfT"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="3nR-ec-Ix1" secondAttribute="trailing" constant="32" id="KeI-zf-ECk"/>
                 <constraint firstItem="3nR-ec-Ix1" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bCF-hQ-p45"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="130.58035714285714"/>

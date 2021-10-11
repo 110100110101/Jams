@@ -49,9 +49,9 @@
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="EjO-ca-1gt" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="cPo-Eb-hbO"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EjO-ca-1gt" secondAttribute="trailing" constant="16" id="mEJ-hF-fOI"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="EjO-ca-1gt" secondAttribute="trailing" constant="32" id="mEJ-hF-fOI"/>
                 <constraint firstItem="EjO-ca-1gt" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="mU6-L6-5HF"/>
-                <constraint firstItem="EjO-ca-1gt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="x90-8m-tVk"/>
+                <constraint firstItem="EjO-ca-1gt" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="32" id="x90-8m-tVk"/>
             </constraints>
             <point key="canvasLocation" x="139" y="98"/>
         </view>
