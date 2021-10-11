@@ -18,6 +18,8 @@ class FetchedJam: Decodable {
     public var trackLongDescription: String
     public var genre: String
     public var isFavorite: Bool
+    public var currency: String
+    public var trackPrice: Decimal?
     
     required init(from decoder: Decoder) throws {
         
@@ -28,15 +30,19 @@ class FetchedJam: Decodable {
         self.trackArtwork = try container.decode(URL.self, forKey: .trackArtwork)
         self.trackLongDescription = try container.decode(String.self, forKey: .trackLongDescription)
         self.genre = try container.decode(String.self, forKey: .genre)
+        self.currency = try container.decode(String.self, forKey: .currency)
+        self.trackPrice = try container.decodeIfPresent(Decimal.self, forKey: .trackPrice)
         self.isFavorite = false // The value of this field is resolve after successfully pulling the data
     }
     
-    init(trackId: Int64, trackName: String, trackArtwork: URL, trackLongDescription: String, genre: String, isFavorite: Bool) {
+    init(trackId: Int64, trackName: String, trackArtwork: URL, trackLongDescription: String, genre: String, currency: String, trackPrice: Decimal?, isFavorite: Bool) {
         self.trackId = trackId
         self.trackName = trackName
         self.trackArtwork = trackArtwork
         self.trackLongDescription = trackLongDescription
         self.genre = genre
+        self.currency = currency
+        self.trackPrice = trackPrice
         self.isFavorite = isFavorite
     }
     
@@ -46,6 +52,8 @@ class FetchedJam: Decodable {
         case trackArtwork = "artworkUrl100"
         case trackLongDescription = "longDescription"
         case genre = "primaryGenreName"
+        case currency = "currency"
+        case trackPrice = "trackPrice"
     }
 }
 
