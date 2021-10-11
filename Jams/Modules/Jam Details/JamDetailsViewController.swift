@@ -17,6 +17,8 @@ fileprivate enum JamDetailsViewControllerRestorationKeys {
     static let selectedJamArtwork = "selectedJamArtwork"
     static let selectedjamDescription = "selectedjamDescription"
     static let selectedJamGenre = "selectedJamGenre"
+    static let selectedJamCurrency = "selectedJamCurrency"
+    static let selectedJamTrackPrice = "selectedJamTrackPrice"
     static let selectedJamIsFavorite = "selectedJamIsFavorite"
 }
 
@@ -72,6 +74,13 @@ class JamDetailsViewController: UIViewController {
         coder.encode(selectedJam.jamName, forKey: JamDetailsViewControllerRestorationKeys.selectedJamName)
         coder.encode(selectedJam.jamArtwork.absoluteString, forKey: JamDetailsViewControllerRestorationKeys.selectedJamArtwork)
         coder.encode(selectedJam.jamDescription, forKey: JamDetailsViewControllerRestorationKeys.selectedjamDescription)
+        
+        coder.encode(selectedJam.jamCurrency, forKey: JamDetailsViewControllerRestorationKeys.selectedJamCurrency)
+        
+        if let trackPrice = selectedJam.jamTrackPrice {
+            coder.encode(NSDecimalNumber(decimal: trackPrice), forKey: JamDetailsViewControllerRestorationKeys.selectedJamTrackPrice)
+        }
+        
         coder.encode(selectedJam.jamGenre, forKey: JamDetailsViewControllerRestorationKeys.selectedJamGenre)
         
         let isFavorite = self.viewModel.isFavorite.value
@@ -165,6 +174,8 @@ extension JamDetailsViewController: UIViewControllerRestoration {
         
         let jamDescription = coder.decodeObject(forKey: JamDetailsViewControllerRestorationKeys.selectedjamDescription) as! String
         let jamGenre = coder.decodeObject(forKey: JamDetailsViewControllerRestorationKeys.selectedJamGenre) as! String
+        let jamCurrency = coder.decodeObject(forKey: JamDetailsViewControllerRestorationKeys.selectedJamCurrency) as! String
+        let jamTrackPrice = coder.decodeObject(forKey: JamDetailsViewControllerRestorationKeys.selectedJamTrackPrice) as? NSDecimalNumber
         let isFavorite = coder.decodeBool(forKey: JamDetailsViewControllerRestorationKeys.selectedJamIsFavorite)
         
         let jam = FetchedJam(trackId: jamID,
@@ -172,6 +183,8 @@ extension JamDetailsViewController: UIViewControllerRestoration {
                              trackArtwork: jamArtwork,
                              trackLongDescription: jamDescription,
                              genre: jamGenre,
+                             currency: jamCurrency,
+                             trackPrice: jamTrackPrice?.decimalValue,
                              isFavorite: isFavorite)
         
         let detailsDataSource = JamDetailsDataSource()
