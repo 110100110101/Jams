@@ -8,6 +8,13 @@
 import UIKit
 import RxSwift
 
+/**
+ JamsViewController Restoration Keys! 
+ */
+fileprivate enum JamsViewControllerRestorationKeys {
+    static let searchBarValue = "searchBarValue"
+}
+
 class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, UISearchControllerDelegate, JamTableViewCellDelegate {
     
     // MARK: - Outlets
@@ -66,10 +73,19 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
     
     override func encodeRestorableState(with coder: NSCoder) {
         super.encodeRestorableState(with: coder)
+        
+        coder.encode(self.lastSearchedTerm, forKey: JamsViewControllerRestorationKeys.searchBarValue)
     }
     
     override func decodeRestorableState(with coder: NSCoder) {
         super.decodeRestorableState(with: coder)
+        
+        let lastSearchedTerm = coder.decodeObject(forKey: JamsViewControllerRestorationKeys.searchBarValue) as? String
+        self.searchController.searchBar.text = lastSearchedTerm
+        
+        if let lastSearchedTerm = lastSearchedTerm {
+            self.viewModel.search(lastSearchedTerm)
+        }
     }
     
     // MARK: - UISearchControllerDelegate Methods
