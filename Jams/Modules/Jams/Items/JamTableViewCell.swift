@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import Avatar
 
 protocol JamTableViewCellDelegate: AnyObject {
     
@@ -82,13 +83,26 @@ class JamTableViewCell: UITableViewCell {
      */
     public func setTrackArtwork(url: URL) {
         
+        let frameSize = self.imageViewTrackArtwork.frame.size
         self.imageViewTrackArtwork.kf.indicatorType = .activity
         self.imageViewTrackArtwork.kf.setImage(with: url,
-                                               placeholder: nil, // TODO: Provide a placeholder
+                                               placeholder: nil,
                                                options: [
                                                 .scaleFactor(UIScreen.main.scale),
                                                 .transition(.fade(0.3))
-                                               ])
+                                               ],
+                                               completionHandler: { (result) in
+                                                switch result {
+                                                case .failure:
+                                                    Avatar.generate(for: frameSize,
+                                                                    scale: 12,
+                                                                    complete: { [weak self] (_, image) in
+                                                                        self?.imageViewTrackArtwork.image = image
+                                                                    })
+                                                default:
+                                                    break
+                                                }
+                                               })
     }
     
     public func setTrackName(_ name: String) {
