@@ -85,7 +85,21 @@ class MyJamsViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let detailsViewModel = JamDetailsViewModel()
+        /*
+         Since I've consumed directly the NSManagedObject, any changes to them would reflect immediately; like deletion.
+         So create a copy of it and pass it onwards
+         */
+        
+        let favoriteJam = self.viewModel.favoriteJams.value[indexPath.row]
+        let jammable = FetchedJam(trackId: favoriteJam.jamID,
+                                  trackName: favoriteJam.jamName,
+                                  trackArtwork: favoriteJam.jamArtwork,
+                                  trackLongDescription: favoriteJam.jamName,
+                                  genre: favoriteJam.jamGenre,
+                                  isFavorite: true)
+        
+        let detailsDataSource = JamDetailsDataSource()
+        let detailsViewModel = JamDetailsViewModel(jam: jammable, isFavorite: true, dataSource: detailsDataSource)
         let detailsViewController = JamDetailsViewController(viewModel: detailsViewModel)
         self.navigationController?.pushViewController(detailsViewController, animated: true)
         
