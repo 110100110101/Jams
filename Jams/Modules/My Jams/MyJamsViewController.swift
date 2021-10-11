@@ -46,6 +46,12 @@ class MyJamsViewController: UIViewController, UITableViewDataSource, UITableView
         
         self.configureBindings()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.viewModel.getAllFavoriteJams()
+    }
 
     // MARK: - UITableViewDataSource Methods
     
