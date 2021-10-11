@@ -180,7 +180,7 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
         
         if currentSearchPhrase.isEmpty && !hasEncounteredAnErrorWhileSearching {
             
-            let emptyStateView = UINib(nibName: "JamsEmptyStateView", bundle: nil).instantiate(withOwner: nil, options: nil).first as? UIView
+            let emptyStateView = UINib(nibName: "JamsCleanRunStateView", bundle: nil).instantiate(withOwner: nil, options: nil).first as? UIView
             return emptyStateView
         }
         else if !currentSearchPhrase.isEmpty && !hasEncounteredAnErrorWhileSearching {

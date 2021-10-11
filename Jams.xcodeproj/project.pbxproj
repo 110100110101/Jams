@@ -21,7 +21,7 @@
 		2D9D9219271315F200FB32DD /* MyJamsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D9218271315F200FB32DD /* MyJamsDataSource.swift */; };
 		2D9D921B27141B4800FB32DD /* JamDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D921A27141B4800FB32DD /* JamDetailsViewModel.swift */; };
 		2D9D921E271421BA00FB32DD /* JamDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D921D271421BA00FB32DD /* JamDetailsDataSource.swift */; };
-		2D9D92262714881A00FB32DD /* JamsEmptyStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D9D92252714881A00FB32DD /* JamsEmptyStateView.xib */; };
+		2D9D92262714881A00FB32DD /* JamsCleanRunStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D9D92252714881A00FB32DD /* JamsCleanRunStateView.xib */; };
 		2D9D922B27148D1400FB32DD /* JamsNoResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D9D922A27148D1400FB32DD /* JamsNoResultsView.xib */; };
 		2D9D922F2714900C00FB32DD /* JamsErrorView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D9D922E2714900C00FB32DD /* JamsErrorView.xib */; };
 		2DA7FCDD270DCCA300F7920C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA7FCDC270DCCA300F7920C /* AppDelegate.swift */; };
@@ -53,7 +53,7 @@
 		2D9D9218271315F200FB32DD /* MyJamsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyJamsDataSource.swift; sourceTree = "<group>"; };
 		2D9D921A27141B4800FB32DD /* JamDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JamDetailsViewModel.swift; sourceTree = "<group>"; };
 		2D9D921D271421BA00FB32DD /* JamDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JamDetailsDataSource.swift; sourceTree = "<group>"; };
-		2D9D92252714881A00FB32DD /* JamsEmptyStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JamsEmptyStateView.xib; sourceTree = "<group>"; };
+		2D9D92252714881A00FB32DD /* JamsCleanRunStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JamsCleanRunStateView.xib; sourceTree = "<group>"; };
 		2D9D922A27148D1400FB32DD /* JamsNoResultsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JamsNoResultsView.xib; sourceTree = "<group>"; };
 		2D9D922E2714900C00FB32DD /* JamsErrorView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JamsErrorView.xib; sourceTree = "<group>"; };
 		2DA7FCD9270DCCA300F7920C /* Jams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jams.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -148,7 +148,7 @@
 		2D9D922827148BAE00FB32DD /* Clean Run */ = {
 			isa = PBXGroup;
 			children = (
-				2D9D92252714881A00FB32DD /* JamsEmptyStateView.xib */,
+				2D9D92252714881A00FB32DD /* JamsCleanRunStateView.xib */,
 			);
 			path = "Clean Run";
 			sourceTree = "<group>";
@@ -345,7 +345,7 @@
 				2DA7FD11270F31F900F7920C /* JamDetailsViewController.xib in Resources */,
 				2DA7FCFA270DD3BE00F7920C /* JamsViewController.xib in Resources */,
 				2D9D922B27148D1400FB32DD /* JamsNoResultsView.xib in Resources */,
-				2D9D92262714881A00FB32DD /* JamsEmptyStateView.xib in Resources */,
+				2D9D92262714881A00FB32DD /* JamsCleanRunStateView.xib in Resources */,
 				2DA7FCE6270DCCA400F7920C /* Assets.xcassets in Resources */,
 				2DA7FD05270DE26D00F7920C /* JamTableViewCell.xib in Resources */,
 				2DA7FCFF270DDFFE00F7920C /* MyJamsViewController.xib in Resources */,
