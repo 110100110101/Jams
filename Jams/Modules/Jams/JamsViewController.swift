@@ -184,8 +184,8 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
             return emptyStateView
         }
         else if !currentSearchPhrase.isEmpty && !hasEncounteredAnErrorWhileSearching {
-            // TODO: Return Empty State, but with suggestions
-            return nil
+            let emptyStateView = UINib(nibName: "JamsNoResultsView", bundle: nil).instantiate(withOwner: nil, options: nil).first as? UIView
+            return emptyStateView
         }
         else {
             // TODO: Return error state
