@@ -39,11 +39,19 @@ class JamDetailsViewController: UIViewController {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
+    
+    // MARK: - View Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.configureBindings()
+    }
+    
+    // MARK: - Action Methods
+    
+    @IBAction private func buttonFavoriteDidTap() {
+        self.viewModel.toggleFavorites()
     }
 
     // MARK: - Private Methods

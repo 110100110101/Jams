@@ -59,6 +59,9 @@
                                                     <state key="normal">
                                                         <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
                                                     </state>
+                                                    <connections>
+                                                        <action selector="buttonFavoriteDidTap" destination="-1" eventType="touchUpInside" id="7nR-kg-iQp"/>
+                                                    </connections>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qjw-KD-dkb" userLabel="Label Genre">
                                                     <rect key="frame" x="0.0" y="33.5" width="266" height="14.5"/>
