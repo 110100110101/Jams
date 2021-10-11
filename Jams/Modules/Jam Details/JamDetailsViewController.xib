@@ -11,6 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="JamDetailsViewController" customModule="Jams" customModuleProvider="target">
             <connections>
+                <outlet property="buttonFavorite" destination="cIb-rR-DEY" id="hsA-sy-GTe"/>
+                <outlet property="imageViewTrackArtwork" destination="Dbw-ky-ylo" id="SDu-4M-Gfx"/>
+                <outlet property="labelGenre" destination="Qjw-KD-dkb" id="lq0-50-KFV"/>
+                <outlet property="labelLongDescription" destination="vWo-iP-ls9" id="g1B-Kb-LPF"/>
+                <outlet property="labelTrackName" destination="avR-iA-2uP" id="cFQ-8x-E3s"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

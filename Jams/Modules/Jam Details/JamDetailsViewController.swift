@@ -8,6 +8,14 @@
 import UIKit
 
 class JamDetailsViewController: UIViewController {
+    
+    // MARK: - Outlets
+    
+    @IBOutlet private var imageViewTrackArtwork: UIImageView!
+    @IBOutlet private var labelTrackName: UILabel!
+    @IBOutlet private var labelGenre: UILabel!
+    @IBOutlet private var labelLongDescription: UILabel!
+    @IBOutlet private var buttonFavorite: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
