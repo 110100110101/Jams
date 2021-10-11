@@ -94,7 +94,7 @@ class MyJamsViewController: UIViewController, UITableViewDataSource, UITableView
         let jammable = FetchedJam(trackId: favoriteJam.jamID,
                                   trackName: favoriteJam.jamName,
                                   trackArtwork: favoriteJam.jamArtwork,
-                                  trackLongDescription: favoriteJam.jamName,
+                                  trackLongDescription: favoriteJam.jamDescription,
                                   genre: favoriteJam.jamGenre,
                                   isFavorite: true)
         
