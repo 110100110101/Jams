@@ -24,20 +24,20 @@
                             <constraint firstAttribute="height" constant="100" id="l3d-Vz-Tl7"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZN-eu-kLl">
-                        <rect key="frame" x="132" y="8" width="64.5" height="31.5"/>
-                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="26"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZN-eu-kLl">
+                        <rect key="frame" x="132" y="8" width="57" height="27.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DgA-Lt-SlQ">
-                        <rect key="frame" x="132" y="41.5" width="348" height="14.5"/>
+                        <rect key="frame" x="132" y="37.5" width="348" height="18.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" systemColor="systemGrayColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8nk-8T-Lxg">
-                        <rect key="frame" x="200.5" y="9" width="30" height="30"/>
+                        <rect key="frame" x="193" y="7" width="30" height="30"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="30" id="bxG-cV-PzC"/>
                             <constraint firstAttribute="width" constant="30" id="tO0-fc-nhG"/>
@@ -51,16 +51,25 @@
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlN-35-nOl">
                         <rect key="frame" x="132" y="82" width="64" height="26"/>
                         <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="26" id="F9Q-IK-WNY"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="contentEdgeInsets" minX="16" minY="4" maxX="16" maxY="4"/>
                         <state key="normal" title="Free"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="13"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="DgA-Lt-SlQ" firstAttribute="leading" secondItem="odZ-lu-O1v" secondAttribute="trailing" constant="16" id="11f-qv-l2F"/>
                     <constraint firstAttribute="bottom" secondItem="odZ-lu-O1v" secondAttribute="bottom" constant="8" id="5Pc-8K-f2B"/>
                     <constraint firstItem="1ZN-eu-kLl" firstAttribute="top" secondItem="odZ-lu-O1v" secondAttribute="top" id="8iS-pU-7dM"/>
+                    <constraint firstItem="tlN-35-nOl" firstAttribute="top" relation="lessThanOrEqual" secondItem="DgA-Lt-SlQ" secondAttribute="bottom" constant="26" id="Des-93-TtM"/>
                     <constraint firstItem="8nk-8T-Lxg" firstAttribute="leading" secondItem="1ZN-eu-kLl" secondAttribute="trailing" constant="4" id="I2O-Ux-3sF"/>
                     <constraint firstItem="odZ-lu-O1v" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="I91-Wm-3p6"/>
                     <constraint firstItem="8nk-8T-Lxg" firstAttribute="centerY" secondItem="1ZN-eu-kLl" secondAttribute="centerY" id="KJP-lt-r2Y"/>
@@ -71,7 +80,6 @@
                     <constraint firstItem="DgA-Lt-SlQ" firstAttribute="top" secondItem="1ZN-eu-kLl" secondAttribute="bottom" constant="2" id="mmr-Gu-NDU"/>
                     <constraint firstItem="1ZN-eu-kLl" firstAttribute="leading" secondItem="odZ-lu-O1v" secondAttribute="trailing" constant="16" id="nr7-ug-Qv5"/>
                     <constraint firstItem="odZ-lu-O1v" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="u7b-rg-ot7"/>
-                    <constraint firstItem="DgA-Lt-SlQ" firstAttribute="bottom" relation="lessThanOrEqual" secondItem="odZ-lu-O1v" secondAttribute="bottom" id="zo9-ab-4gH"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
