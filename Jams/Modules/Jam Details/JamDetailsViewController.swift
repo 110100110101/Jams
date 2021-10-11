@@ -127,6 +127,11 @@ class JamDetailsViewController: UIViewController {
                                                             break
                                                         }
                                                        })
+                
+                if let formattedTrackPrice = jam.formattedTrackPrice {
+                    let rightBarButtonItem = UIBarButtonItem(title: formattedTrackPrice, style: .plain, target: nil, action: nil)
+                    self.navigationItem.setRightBarButton(rightBarButtonItem, animated: true)
+                }
             })
             .disposed(by: self.disposeBag)
         
