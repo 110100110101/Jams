@@ -73,7 +73,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, shouldRestoreSecureApplicationState coder: NSCoder) -> Bool {
-        return true
+        
+        /*
+         If the saved version and the current version don't match, don't bother
+         restoring it
+         */
+        
+        let savedVersion = coder.decodeObject(forKey: UIApplication.stateRestorationBundleVersionKey) as? String
+        let currentVersion = Bundle.main.object(forInfoDictionaryKey: kCFBundleVersionKey as String) as? String
+        
+        return savedVersion == currentVersion
     }
 }
 
