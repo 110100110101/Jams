@@ -71,5 +71,26 @@ class JamDetailsViewModel {
      */
     public func toggleFavorites() {
         
+        /*
+         There's no popups nor indicators that an error has occurred, so just retain the state, if ever
+         */
+        
+        let jam = self.jam.value
+        
+        let isFavorite = self.isFavorite.value
+        if isFavorite {
+            self.dataSource.removeJamOnFavorites(jam, completion: { [weak self] (isSuccessful) in
+                if isSuccessful {
+                    self?.isFavorite.accept(false)
+                }
+            })
+        }
+        else {
+            self.dataSource.addJamToFavorites(jam, completion: { [weak self] (isSuccessful) in
+                if isSuccessful {
+                    self?.isFavorite.accept(true)
+                }
+            })
+        }
     }
 }
