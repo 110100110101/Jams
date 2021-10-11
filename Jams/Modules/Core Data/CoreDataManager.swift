@@ -224,6 +224,8 @@ final class CoreDataManager {
                 favoriteJam.setValue(jam.jamID, forKey: "trackId")
                 favoriteJam.setValue(jam.jamDescription, forKey: "trackLongDescription")
                 favoriteJam.setValue(jam.jamName, forKey: "trackName")
+                favoriteJam.setValue(jam.jamCurrency, forKey: "currency")
+                favoriteJam.setValue(jam.jamTrackPrice, forKey: "trackPrice")
                 
                 do {
                     try mainContext.save()
