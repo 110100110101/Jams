@@ -15,10 +15,14 @@ class JamDetailsDataSource: JamDetailsViewModelDataSource {
     // MARK: - JamDetailsViewModelDataSource Methods
     
     func addJamToFavorites(_ jam: Jammable, completion: @escaping (Bool) -> ()) {
-        
+        CoreDataManager.sharedInstance.addFavoriteJam(jam: jam, completion: { (_, error) in
+            completion(error == nil)
+        })
     }
     
     func removeJamOnFavorites(_ jam: Jammable, completion: @escaping (Bool) -> ()) {
-        
+        CoreDataManager.sharedInstance.deleteFavoriteJam(jam, completion: { (error) in
+            completion(error == nil)
+        })
     }
 }
