@@ -7,8 +7,9 @@
 
 import UIKit
 import RxSwift
+import DZNEmptyDataSet
 
-class MyJamsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, JamTableViewCellDelegate {
+class MyJamsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, JamTableViewCellDelegate, DZNEmptyDataSetSource {
     
     // MARK: - Outlets
     
@@ -121,6 +122,24 @@ class MyJamsViewController: UIViewController, UITableViewDataSource, UITableView
         self.viewModel.removeFavoriteJam(favoriteJam, completion: nil)
     }
     
+    // MARK: - DZNEmptyDataSetSource Methods
+    
+    func customView(forEmptyDataSet scrollView: UIScrollView!) -> UIView! {
+        
+        let hasEncounteredAnErrorWhileFetching = self.viewModel.hasEncounteredAnErrorWhileFetching.value
+        
+        let nibName: String
+        if hasEncounteredAnErrorWhileFetching {
+            nibName = "MyJamsErrorView"
+        }
+        else {
+            nibName = "MyJamsNoResults"
+        }
+        
+        let view = UINib(nibName: nibName, bundle: nil).instantiate(withOwner: nil, options: nil).first as? UIView
+        return view
+    }
+    
     // MARK: - Private Methods
     
     private func initializeTableViewJamsProperties() {
@@ -130,15 +149,29 @@ class MyJamsViewController: UIViewController, UITableViewDataSource, UITableView
         
         self.tableViewFavoriteJams.dataSource = self
         self.tableViewFavoriteJams.delegate = self
+        self.tableViewFavoriteJams.emptyDataSetSource = self
         self.tableViewFavoriteJams.rowHeight = 116.0
     }
     
     private func configureBindings() {
         
+        // MARK: favoriteJams
+        
         self.viewModel.favoriteJams
             .asDriver()
             .drive(onNext: { [weak self] _ in
                 self?.tableViewFavoriteJams.reloadData()
+            })
+            .disposed(by: self.disposeBag)
+        
+        // MARK: hasEncounteredAnErrorWhileFetching
+        
+        self.viewModel.hasEncounteredAnErrorWhileFetching
+            .asDriver()
+            .drive(onNext: { [weak self] (hasEncounteredAnErrorWhileFetching) in
+                if hasEncounteredAnErrorWhileFetching {
+                    self?.tableViewFavoriteJams.reloadEmptyDataSet()
+                }
             })
             .disposed(by: self.disposeBag)
     }
