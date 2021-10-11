@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import Kingfisher
 
 class JamDetailsViewController: UIViewController {
     
@@ -20,6 +22,8 @@ class JamDetailsViewController: UIViewController {
     // MARK: - Fields
     
     private let viewModel: JamDetailsViewModel
+    
+    private let disposeBag = DisposeBag()
     
     // MARK: - Initializers
     
@@ -39,18 +43,61 @@ class JamDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.configureBindings()
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - Private Methods
+    
+    private func configureBindings() {
+        
+        // MARK: jam
+        
+        self.viewModel.jam
+            .asDriver()
+            .drive(onNext: { [unowned self] (jam) in
+                
+                self.labelTrackName.text = jam.jamName
+                self.labelGenre.text = jam.jamGenre
+                self.labelLongDescription.text = jam.jamDescription
+                                
+                self.imageViewTrackArtwork.kf.indicatorType = .activity
+                self.imageViewTrackArtwork.kf.setImage(with: jam.jamArtwork,
+                                                       placeholder: nil, // TODO: Provide a placeholder
+                                                       options: [
+                                                        .scaleFactor(UIScreen.main.scale),
+                                                        .transition(.fade(0.3))
+                                                       ])
+            })
+            .disposed(by: self.disposeBag)
+        
+        // MARK: isFavorite
+        
+        self.viewModel.isFavorite
+            .asDriver()
+            .drive(onNext: { [weak self] (isFavorite) in
+                
+                guard let self = self else {
+                    return
+                }
+                
+                let systemImageName: String
+                if isFavorite {
+                    systemImageName = "heart.fill"
+                }
+                else {
+                    systemImageName = "heart"
+                }
+                
+                let image = UIImage(systemName: systemImageName)
+                
+                UIView.transition(with: self.buttonFavorite,
+                                  duration: 0.25,
+                                  options: .transitionCrossDissolve,
+                                  animations: {
+                                    self.buttonFavorite.setImage(image, for: .normal)
+                                  },
+                                  completion: nil)
+            })
+            .disposed(by: self.disposeBag)
     }
-    */
-
 }
