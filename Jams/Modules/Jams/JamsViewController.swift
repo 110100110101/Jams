@@ -62,6 +62,16 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
         self.configureBindings()
     }
     
+    // MARK: - UIStateRestoring Methods
+    
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+    }
+    
+    override func decodeRestorableState(with coder: NSCoder) {
+        super.decodeRestorableState(with: coder)
+    }
+    
     // MARK: - UISearchControllerDelegate Methods
     
     func didDismissSearchController(_ searchController: UISearchController) {
