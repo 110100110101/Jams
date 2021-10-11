@@ -76,6 +76,8 @@ class MyJamsViewModel {
      
      - parameter jam: Jam that gonna be removed from the list
      - parameter completion: Invoked once the operation finishes. It also passes a boolean to indicate if the removal was successful or not.
+     
+     - Note: This method internally invokes the `getAllFavorites` method to update the list of items
      */
     public func removeFavoriteJam(_ jam: FavoriteJam, completion: ((Bool) -> ())?) {
                 
