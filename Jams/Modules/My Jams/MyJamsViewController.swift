@@ -100,14 +100,7 @@ class MyJamsViewController: UIViewController, UITableViewDataSource, UITableView
         }
         
         let favoriteJam = self.viewModel.favoriteJams.value[cellIndexPath.row]
-        self.viewModel.removeFavoriteJam(favoriteJam, completion: { [weak self] (isSuccessful) in
-            
-            if isSuccessful {
-                self?.tableViewFavoriteJams.beginUpdates()
-                self?.tableViewFavoriteJams.deleteRows(at: [cellIndexPath], with: .left)
-                self?.tableViewFavoriteJams.endUpdates()
-            }
-        })
+        self.viewModel.removeFavoriteJam(favoriteJam, completion: nil)
     }
     
     // MARK: - Private Methods
