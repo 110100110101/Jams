@@ -48,6 +48,14 @@
                             <action selector="buttonFavoriteDidTap" destination="KGk-i7-Jjw" eventType="touchUpInside" id="qgr-Uo-QJr"/>
                         </connections>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tlN-35-nOl">
+                        <rect key="frame" x="132" y="82" width="64" height="26"/>
+                        <color key="backgroundColor" systemColor="systemPinkColor"/>
+                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <inset key="contentEdgeInsets" minX="16" minY="4" maxX="16" maxY="4"/>
+                        <state key="normal" title="Free"/>
+                    </button>
                 </subviews>
                 <constraints>
                     <constraint firstItem="DgA-Lt-SlQ" firstAttribute="leading" secondItem="odZ-lu-O1v" secondAttribute="trailing" constant="16" id="11f-qv-l2F"/>
@@ -57,6 +65,8 @@
                     <constraint firstItem="odZ-lu-O1v" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="I91-Wm-3p6"/>
                     <constraint firstItem="8nk-8T-Lxg" firstAttribute="centerY" secondItem="1ZN-eu-kLl" secondAttribute="centerY" id="KJP-lt-r2Y"/>
                     <constraint firstAttribute="trailing" secondItem="DgA-Lt-SlQ" secondAttribute="trailing" constant="16" id="ZZq-8B-vc7"/>
+                    <constraint firstItem="tlN-35-nOl" firstAttribute="bottom" secondItem="odZ-lu-O1v" secondAttribute="bottom" id="ecU-1H-Stp"/>
+                    <constraint firstItem="tlN-35-nOl" firstAttribute="leading" secondItem="odZ-lu-O1v" secondAttribute="trailing" constant="16" id="fiK-lJ-2cB"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8nk-8T-Lxg" secondAttribute="trailing" constant="16" id="kV6-U8-rr2"/>
                     <constraint firstItem="DgA-Lt-SlQ" firstAttribute="top" secondItem="1ZN-eu-kLl" secondAttribute="bottom" constant="2" id="mmr-Gu-NDU"/>
                     <constraint firstItem="1ZN-eu-kLl" firstAttribute="leading" secondItem="odZ-lu-O1v" secondAttribute="trailing" constant="16" id="nr7-ug-Qv5"/>
@@ -67,6 +77,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="buttonFavorite" destination="8nk-8T-Lxg" id="G1b-Rf-MCz"/>
+                <outlet property="buttonPurchase" destination="tlN-35-nOl" id="6yL-s6-CHR"/>
                 <outlet property="imageViewTrackArtwork" destination="odZ-lu-O1v" id="YRA-Im-jBO"/>
                 <outlet property="labelGenre" destination="DgA-Lt-SlQ" id="2Ve-Rj-3yP"/>
                 <outlet property="labelTrackName" destination="1ZN-eu-kLl" id="WMj-U0-Jh3"/>

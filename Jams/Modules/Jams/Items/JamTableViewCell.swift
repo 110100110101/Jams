@@ -27,6 +27,7 @@ class JamTableViewCell: UITableViewCell {
     @IBOutlet private var labelTrackName: UILabel!
     @IBOutlet private var buttonFavorite: UIButton!
     @IBOutlet private var labelGenre: UILabel!
+    @IBOutlet private var buttonPurchase: UIButton!
     
     // MARK: - Fields
     
