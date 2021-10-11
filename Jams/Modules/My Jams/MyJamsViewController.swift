@@ -100,6 +100,8 @@ class MyJamsViewController: UIViewController, UITableViewDataSource, UITableView
                                   trackArtwork: favoriteJam.jamArtwork,
                                   trackLongDescription: favoriteJam.jamDescription,
                                   genre: favoriteJam.jamGenre,
+                                  currency: favoriteJam.jamCurrency,
+                                  trackPrice: favoriteJam.jamTrackPrice,
                                   isFavorite: true)
         
         let detailsDataSource = JamDetailsDataSource()
