@@ -78,7 +78,7 @@ class JamDetailsViewController: UIViewController {
         coder.encode(selectedJam.jamCurrency, forKey: JamDetailsViewControllerRestorationKeys.selectedJamCurrency)
         
         if let trackPrice = selectedJam.jamTrackPrice {
-            coder.encode(NSDecimalNumber(decimal: trackPrice), forKey: JamDetailsViewControllerRestorationKeys.selectedJamTrackPrice)
+            coder.encode("\(trackPrice)", forKey: JamDetailsViewControllerRestorationKeys.selectedJamTrackPrice)
         }
         
         coder.encode(selectedJam.jamGenre, forKey: JamDetailsViewControllerRestorationKeys.selectedJamGenre)
@@ -175,7 +175,10 @@ extension JamDetailsViewController: UIViewControllerRestoration {
         let jamDescription = coder.decodeObject(forKey: JamDetailsViewControllerRestorationKeys.selectedjamDescription) as! String
         let jamGenre = coder.decodeObject(forKey: JamDetailsViewControllerRestorationKeys.selectedJamGenre) as! String
         let jamCurrency = coder.decodeObject(forKey: JamDetailsViewControllerRestorationKeys.selectedJamCurrency) as! String
-        let jamTrackPrice = coder.decodeObject(forKey: JamDetailsViewControllerRestorationKeys.selectedJamTrackPrice) as? NSDecimalNumber
+        
+        let parsedJamTrackPrice = coder.decodeObject(forKey: JamDetailsViewControllerRestorationKeys.selectedJamTrackPrice) as! String
+        let jamTrackPrice = Decimal(string: parsedJamTrackPrice)
+    
         let isFavorite = coder.decodeBool(forKey: JamDetailsViewControllerRestorationKeys.selectedJamIsFavorite)
         
         let jam = FetchedJam(trackId: jamID,
@@ -184,7 +187,7 @@ extension JamDetailsViewController: UIViewControllerRestoration {
                              trackLongDescription: jamDescription,
                              genre: jamGenre,
                              currency: jamCurrency,
-                             trackPrice: jamTrackPrice?.decimalValue,
+                             trackPrice: jamTrackPrice,
                              isFavorite: isFavorite)
         
         let detailsDataSource = JamDetailsDataSource()
