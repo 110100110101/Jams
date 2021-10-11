@@ -78,6 +78,8 @@ class MyJamsViewModel {
      - parameter completion: Invoked once the operation finishes. It also passes a boolean to indicate if the removal was successful or not.
      */
     public func removeFavoriteJam(_ jam: FavoriteJam, completion: @escaping (Bool) -> ()) {
-        
+        self.dataSource.removeFavoriteJam(jam, completion: { (error) in
+            completion(error == nil)
+        })
     }
 }
