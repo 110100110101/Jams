@@ -15,9 +15,7 @@ final class MyJamsDataSource: MyJamsViewModelDataSource {
     // MARK: - MyJamsViewModelDataSource Methods
     
     func getAllFavoriteJams(completion: @escaping ([FavoriteJam]?, Error?) -> ()) {
-        CoreDataManager.sharedInstance.fetchAllFavoriteJams(completion: { (favoriteJams, error) in
-            completion(favoriteJams, error)
-        })
+        CoreDataManager.sharedInstance.fetchAllFavoriteJams(completion: completion)
     }
     
     func removeFavoriteJam(_ jam: FavoriteJam, completion: @escaping (Error?) -> ()) {
