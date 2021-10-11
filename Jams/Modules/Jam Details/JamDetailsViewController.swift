@@ -44,6 +44,9 @@ class JamDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.restorationIdentifier = "JamDetailsViewController"
+        self.restorationClass = JamDetailsViewController.self
 
         self.configureBindings()
     }
@@ -107,5 +110,24 @@ class JamDetailsViewController: UIViewController {
                                   completion: nil)
             })
             .disposed(by: self.disposeBag)
+    }
+}
+
+extension JamDetailsViewController: UIViewControllerRestoration {
+    
+    static func viewController(withRestorationIdentifierPath identifierComponents: [String], coder: NSCoder) -> UIViewController? {
+        
+        let dummyJam = FetchedJam(trackId: 01,
+                                  trackName: "",
+                                  trackArtwork: URL(string: "https://images.unsplash.com/photo-1489389944381-3471b5b30f04")!,
+                                  trackLongDescription: "",
+                                  genre: "",
+                                  isFavorite: false)
+        
+        let detailsDataSource = JamDetailsDataSource()
+        let detailsViewModel = JamDetailsViewModel(jam: dummyJam, isFavorite: dummyJam.isFavorite, dataSource: detailsDataSource)
+        let detailsViewController = JamDetailsViewController(viewModel: detailsViewModel)
+        
+        return detailsViewController
     }
 }
