@@ -23,7 +23,6 @@
 		2D9D921E271421BA00FB32DD /* JamDetailsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D921D271421BA00FB32DD /* JamDetailsDataSource.swift */; };
 		2D9D92262714881A00FB32DD /* JamsEmptyStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D9D92252714881A00FB32DD /* JamsEmptyStateView.xib */; };
 		2D9D922B27148D1400FB32DD /* JamsNoResultsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2D9D922A27148D1400FB32DD /* JamsNoResultsView.xib */; };
-		2D9D922D27148D2100FB32DD /* JamsNoResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9D922C27148D2100FB32DD /* JamsNoResultsView.swift */; };
 		2DA7FCDD270DCCA300F7920C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DA7FCDC270DCCA300F7920C /* AppDelegate.swift */; };
 		2DA7FCE6270DCCA400F7920C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7FCE5270DCCA400F7920C /* Assets.xcassets */; };
 		2DA7FCE9270DCCA400F7920C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DA7FCE7270DCCA400F7920C /* LaunchScreen.storyboard */; };
@@ -55,7 +54,6 @@
 		2D9D921D271421BA00FB32DD /* JamDetailsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JamDetailsDataSource.swift; sourceTree = "<group>"; };
 		2D9D92252714881A00FB32DD /* JamsEmptyStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JamsEmptyStateView.xib; sourceTree = "<group>"; };
 		2D9D922A27148D1400FB32DD /* JamsNoResultsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = JamsNoResultsView.xib; sourceTree = "<group>"; };
-		2D9D922C27148D2100FB32DD /* JamsNoResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JamsNoResultsView.swift; sourceTree = "<group>"; };
 		2DA7FCD9270DCCA300F7920C /* Jams.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Jams.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DA7FCDC270DCCA300F7920C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DA7FCE5270DCCA400F7920C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -156,7 +154,6 @@
 			isa = PBXGroup;
 			children = (
 				2D9D922A27148D1400FB32DD /* JamsNoResultsView.xib */,
-				2D9D922C27148D2100FB32DD /* JamsNoResultsView.swift */,
 			);
 			path = "No Results";
 			sourceTree = "<group>";
@@ -409,7 +406,6 @@
 				2D9D921B27141B4800FB32DD /* JamDetailsViewModel.swift in Sources */,
 				2D9D92102712F88600FB32DD /* Jammable.swift in Sources */,
 				2D9D9219271315F200FB32DD /* MyJamsDataSource.swift in Sources */,
-				2D9D922D27148D2100FB32DD /* JamsNoResultsView.swift in Sources */,
 				2D90636D27119126009E8D58 /* Jams.xcdatamodeld in Sources */,
 				2DA7FCDD270DCCA300F7920C /* AppDelegate.swift in Sources */,
 			);
