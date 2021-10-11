@@ -17,4 +17,6 @@ protocol Jammable {
     var jamArtwork: URL { get }
     var jamDescription: String { get }
     var jamGenre: String { get }
+    var jamCurrency: String { get }
+    var jamTrackPrice: Decimal? { get }
 }
