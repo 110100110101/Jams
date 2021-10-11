@@ -40,6 +40,9 @@ class MyJamsViewController: UIViewController, UITableViewDataSource, UITableView
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.restorationIdentifier = "MyJamsViewController"
+        self.restorationClass = MyJamsViewController.self
+        
         self.navigationItem.title = "My Jams"
         
         self.initializeTableViewJamsProperties()
@@ -138,5 +141,17 @@ class MyJamsViewController: UIViewController, UITableViewDataSource, UITableView
                 self?.tableViewFavoriteJams.reloadData()
             })
             .disposed(by: self.disposeBag)
+    }
+}
+
+extension MyJamsViewController: UIViewControllerRestoration {
+    
+    static func viewController(withRestorationIdentifierPath identifierComponents: [String], coder: NSCoder) -> UIViewController? {
+        
+        let myJamsDataSource = MyJamsDataSource()
+        let myJamsViewModel = MyJamsViewModel(dataSource: myJamsDataSource)
+        let myJamsViewController = MyJamsViewController(viewModel: myJamsViewModel)
+        
+        return myJamsViewController
     }
 }
