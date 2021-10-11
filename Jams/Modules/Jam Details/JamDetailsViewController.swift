@@ -9,6 +9,16 @@ import UIKit
 import RxSwift
 import Kingfisher
 
+fileprivate enum JamDetailsViewControllerRestorationKeys {
+    
+    static let selectedJamID = "selectedJamID"
+    static let selectedJamName = "selectedJamName"
+    static let selectedJamArtwork = "selectedJamArtwork"
+    static let selectedjamDescription = "selectedjamDescription"
+    static let selectedJamGenre = "selectedJamGenre"
+    static let selectedJamIsFavorite = "selectedJamIsFavorite"
+}
+
 class JamDetailsViewController: UIViewController {
     
     // MARK: - Outlets
@@ -49,6 +59,22 @@ class JamDetailsViewController: UIViewController {
         self.restorationClass = JamDetailsViewController.self
 
         self.configureBindings()
+    }
+    
+    // MARK: - UIStateRestoring Methods
+    
+    override func encodeRestorableState(with coder: NSCoder) {
+        super.encodeRestorableState(with: coder)
+        
+        let selectedJam = self.viewModel.jam.value
+        coder.encode(selectedJam.jamID, forKey: JamDetailsViewControllerRestorationKeys.selectedJamID)
+        coder.encode(selectedJam.jamName, forKey: JamDetailsViewControllerRestorationKeys.selectedJamName)
+        coder.encode(selectedJam.jamArtwork.absoluteString, forKey: JamDetailsViewControllerRestorationKeys.selectedJamArtwork)
+        coder.encode(selectedJam.jamDescription, forKey: JamDetailsViewControllerRestorationKeys.selectedjamDescription)
+        coder.encode(selectedJam.jamGenre, forKey: JamDetailsViewControllerRestorationKeys.selectedJamGenre)
+        
+        let isFavorite = self.viewModel.isFavorite.value
+        coder.encode(isFavorite, forKey: JamDetailsViewControllerRestorationKeys.selectedJamIsFavorite)
     }
     
     // MARK: - Action Methods
@@ -117,15 +143,25 @@ extension JamDetailsViewController: UIViewControllerRestoration {
     
     static func viewController(withRestorationIdentifierPath identifierComponents: [String], coder: NSCoder) -> UIViewController? {
         
-        let dummyJam = FetchedJam(trackId: 01,
-                                  trackName: "",
-                                  trackArtwork: URL(string: "https://images.unsplash.com/photo-1489389944381-3471b5b30f04")!,
-                                  trackLongDescription: "",
-                                  genre: "",
-                                  isFavorite: false)
+        let jamID = coder.decodeInt64(forKey: JamDetailsViewControllerRestorationKeys.selectedJamID)
+        let jamName = coder.decodeObject(forKey: JamDetailsViewControllerRestorationKeys.selectedJamName) as! String
+        
+        let parsedJamArtwork = coder.decodeObject(forKey: JamDetailsViewControllerRestorationKeys.selectedJamArtwork) as! String
+        let jamArtwork = URL(string: parsedJamArtwork)!
+        
+        let jamDescription = coder.decodeObject(forKey: JamDetailsViewControllerRestorationKeys.selectedjamDescription) as! String
+        let jamGenre = coder.decodeObject(forKey: JamDetailsViewControllerRestorationKeys.selectedJamGenre) as! String
+        let isFavorite = coder.decodeBool(forKey: JamDetailsViewControllerRestorationKeys.selectedJamIsFavorite)
+        
+        let jam = FetchedJam(trackId: jamID,
+                             trackName: jamName,
+                             trackArtwork: jamArtwork,
+                             trackLongDescription: jamDescription,
+                             genre: jamGenre,
+                             isFavorite: isFavorite)
         
         let detailsDataSource = JamDetailsDataSource()
-        let detailsViewModel = JamDetailsViewModel(jam: dummyJam, isFavorite: dummyJam.isFavorite, dataSource: detailsDataSource)
+        let detailsViewModel = JamDetailsViewModel(jam: jam, isFavorite: jam.isFavorite, dataSource: detailsDataSource)
         let detailsViewController = JamDetailsViewController(viewModel: detailsViewModel)
         
         return detailsViewController
