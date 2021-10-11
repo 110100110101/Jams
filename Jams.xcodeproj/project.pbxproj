@@ -131,12 +131,20 @@
 			path = "Data Source";
 			sourceTree = "<group>";
 		};
-		2D9D92272714882000FB32DD /* Empty State (Clean Run) */ = {
+		2D9D92272714882000FB32DD /* Empty State */ = {
+			isa = PBXGroup;
+			children = (
+				2D9D922827148BAE00FB32DD /* Clean Run */,
+			);
+			path = "Empty State";
+			sourceTree = "<group>";
+		};
+		2D9D922827148BAE00FB32DD /* Clean Run */ = {
 			isa = PBXGroup;
 			children = (
 				2D9D92252714881A00FB32DD /* JamsEmptyStateView.xib */,
 			);
-			path = "Empty State (Clean Run)";
+			path = "Clean Run";
 			sourceTree = "<group>";
 		};
 		2DA7FCD0270DCCA300F7920C = {
@@ -188,7 +196,7 @@
 				2DA7FCF7270DD3BE00F7920C /* JamsViewController.swift */,
 				2DA7FD01270DE25400F7920C /* Items */,
 				2D906368271181D7009E8D58 /* Data Source */,
-				2D9D92272714882000FB32DD /* Empty State (Clean Run) */,
+				2D9D92272714882000FB32DD /* Empty State */,
 			);
 			path = Jams;
 			sourceTree = "<group>";
