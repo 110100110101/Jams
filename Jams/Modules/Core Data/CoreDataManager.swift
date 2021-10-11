@@ -171,7 +171,9 @@ final class CoreDataManager {
                 }
             }
             else {
-                completion(nil, nil)
+                DispatchQueue.main.async {
+                    completion(nil, nil)
+                }
             }
         }
         
