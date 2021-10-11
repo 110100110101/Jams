@@ -70,9 +70,7 @@ final class JamsDataSource: JamsViewModelDataSource {
     }
     
     func removeJamOnFavorites(_ jam: FetchedJam, completion: @escaping (Error?) -> ()) {
-        CoreDataManager.sharedInstance.deleteFavoriteJam(jam, completion: { (error) in
-            completion(error)
-        })
+        CoreDataManager.sharedInstance.deleteFavoriteJam(jam, completion: completion)
     }
     
     // MARK: - Private Methods
