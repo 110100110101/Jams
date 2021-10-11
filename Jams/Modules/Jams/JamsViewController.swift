@@ -126,10 +126,14 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
         
         let fetchedJam = self.viewModel.jams.value[cellIndexPath.row]
         if fetchedJam.isFavorite {
-            self.viewModel.removeJamOnFavorites(fetchedJam)
+            self.viewModel.removeJamOnFavorites(fetchedJam, completion: { [weak self] in
+                self?.tableViewJams.reloadRows(at: [cellIndexPath], with: .automatic)
+            })
         }
         else {
-            self.viewModel.addJamToFavorites(fetchedJam)
+            self.viewModel.addJamToFavorites(fetchedJam, completion: { [weak self] in
+                self?.tableViewJams.reloadRows(at: [cellIndexPath], with: .automatic)
+            })
         }
     }
     

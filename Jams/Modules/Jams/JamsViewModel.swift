@@ -85,21 +85,31 @@ class JamsViewModel {
     
     /**
      Adds the jam to favorites
+     
+     - parameter jam : Jam that will be added to favorites
+     - parameter completion: Invoked whenever the operation has been successfully done or not.
+     This is just used for updating the caller
      */
-    public func addJamToFavorites(_ jam: FetchedJam) {
+    public func addJamToFavorites(_ jam: FetchedJam, completion: @escaping () -> ()) {
         
         self.dataSource.addJamToFavorites(jam, completion: { (error) in
             jam.isFavorite = (error == nil)
+            completion()
         })
     }
     
     /**
      Removes the jam on favorites
+     
+     - parameter jam : Jam that will be remove on favorites
+     - parameter completion: Invoked whenever the operation has been successfully done or not.
+     This is just used for updating the caller
      */
-    public func removeJamOnFavorites(_ jam: FetchedJam) {
+    public func removeJamOnFavorites(_ jam: FetchedJam, completion: @escaping () -> ()) {
                 
         self.dataSource.removeJamOnFavorites(jam, completion: { (error) in
             jam.isFavorite = !(error == nil)
+            completion()
         })
     }
 }
