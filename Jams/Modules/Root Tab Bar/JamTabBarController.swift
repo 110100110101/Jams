@@ -13,6 +13,14 @@ fileprivate enum JamTabBarControllerRestorationKeys {
 
 class JamTabBarController: UITabBarController {
     
+    // MARK: - View Lifecycle
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.restorationIdentifier = "JamTabBarController"
+    }
+    
     // MARK: - UIStateRestoring Methods
     
     override func encodeRestorableState(with coder: NSCoder) {
