@@ -178,19 +178,19 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
         let currentSearchPhrase = self.searchController.searchBar.text ?? ""
         let hasEncounteredAnErrorWhileSearching = self.viewModel.hasEncounteredAnErrorWhileSearching.value
         
+        let nibName: String
         if currentSearchPhrase.isEmpty && !hasEncounteredAnErrorWhileSearching {
-            
-            let emptyStateView = UINib(nibName: "JamsCleanRunStateView", bundle: nil).instantiate(withOwner: nil, options: nil).first as? UIView
-            return emptyStateView
+            nibName = "JamsCleanRunStateView"
         }
         else if !currentSearchPhrase.isEmpty && !hasEncounteredAnErrorWhileSearching {
-            let emptyStateView = UINib(nibName: "JamsNoResultsView", bundle: nil).instantiate(withOwner: nil, options: nil).first as? UIView
-            return emptyStateView
+            nibName = "JamsNoResultsView"
         }
         else {
-            // TODO: Return error state
-            return nil
+            nibName = "JamsErrorView"
         }
+        
+        let view = UINib(nibName: nibName, bundle: nil).instantiate(withOwner: nil, options: nil).first as? UIView
+        return view
     }
     
     // MARK: - Private Methods
