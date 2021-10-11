@@ -181,8 +181,10 @@ extension JamDetailsViewController: UIViewControllerRestoration {
         let jamGenre = coder.decodeObject(forKey: JamDetailsViewControllerRestorationKeys.selectedJamGenre) as! String
         let jamCurrency = coder.decodeObject(forKey: JamDetailsViewControllerRestorationKeys.selectedJamCurrency) as! String
         
-        let parsedJamTrackPrice = coder.decodeObject(forKey: JamDetailsViewControllerRestorationKeys.selectedJamTrackPrice) as! String
-        let jamTrackPrice = Decimal(string: parsedJamTrackPrice)
+        var jamTrackPrice: Decimal?
+        if let parsedJamTrackPrice = coder.decodeObject(forKey: JamDetailsViewControllerRestorationKeys.selectedJamTrackPrice) as? String {
+            jamTrackPrice = Decimal(string: parsedJamTrackPrice)
+        }
     
         let isFavorite = coder.decodeBool(forKey: JamDetailsViewControllerRestorationKeys.selectedJamIsFavorite)
         
