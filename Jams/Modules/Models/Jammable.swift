@@ -20,3 +20,39 @@ protocol Jammable {
     var jamCurrency: String { get }
     var jamTrackPrice: Decimal? { get }
 }
+
+extension Jammable {
+        
+    /**
+     Returns the formatted track price of the Jam
+     
+     - Note: This returns nil, if there's no track price
+     */
+    var formattedTrackPrice: String? {
+        
+        guard let trackPrice = self.jamTrackPrice else {
+            return nil
+        }
+        
+        let numberformatter = NumberFormatterCache.sharedInstance.numberFormatter
+        numberformatter.currencyCode = self.jamCurrency
+        
+        let decimalNumber = NSDecimalNumber(decimal: trackPrice)
+        return numberformatter.string(from: decimalNumber)
+    }
+}
+
+final class NumberFormatterCache {
+    
+    public static let sharedInstance = NumberFormatterCache()
+    
+    public let numberFormatter: NumberFormatter
+    
+    private init() {
+        
+        self.numberFormatter = NumberFormatter()
+        self.numberFormatter.numberStyle = .currency
+        self.numberFormatter.minimumFractionDigits = 2
+        self.numberFormatter.maximumFractionDigits = 2
+    }
+}
