@@ -127,6 +127,7 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
         dequeuedCell.setTrackName(data.trackName)
         dequeuedCell.setTrackArtwork(url: data.trackArtwork)
         dequeuedCell.setGenre(data.genre)
+        dequeuedCell.setPrice(data.formattedTrackPrice)
         dequeuedCell.isFavorite = data.isFavorite
         
         dequeuedCell.accessoryType = .disclosureIndicator
