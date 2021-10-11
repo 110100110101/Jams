@@ -57,7 +57,9 @@
                         <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <inset key="contentEdgeInsets" minX="16" minY="4" maxX="16" maxY="4"/>
-                        <state key="normal" title="Free"/>
+                        <state key="normal" title="Free">
+                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </state>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                 <integer key="value" value="13"/>
