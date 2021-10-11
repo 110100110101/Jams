@@ -8,7 +8,7 @@
 import UIKit
 import RxSwift
 
-class MyJamsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class MyJamsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, JamTableViewCellDelegate {
     
     // MARK: - Outlets
     
@@ -76,7 +76,7 @@ class MyJamsViewController: UIViewController, UITableViewDataSource, UITableView
         
         dequeuedCell.accessoryType = .disclosureIndicator
         
-        // TODO: Set delegate
+        dequeuedCell.delegate = self
         
         return dequeuedCell
     }
@@ -89,6 +89,25 @@ class MyJamsViewController: UIViewController, UITableViewDataSource, UITableView
         self.navigationController?.pushViewController(detailsViewController, animated: true)
         
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    // MARK: - JamTableViewCellDelegate Methods
+    
+    func jamTableViewCellButtonFavoriteDidTap(_ cell: JamTableViewCell) {
+        
+        guard let cellIndexPath = self.tableViewFavoriteJams.indexPath(for: cell) else {
+            return
+        }
+        
+        let favoriteJam = self.viewModel.favoriteJams.value[cellIndexPath.row]
+        self.viewModel.removeFavoriteJam(favoriteJam, completion: { [weak self] (isSuccessful) in
+            
+            if isSuccessful {
+                self?.tableViewFavoriteJams.beginUpdates()
+                self?.tableViewFavoriteJams.deleteRows(at: [cellIndexPath], with: .left)
+                self?.tableViewFavoriteJams.endUpdates()
+            }
+        })
     }
     
     // MARK: - Private Methods
