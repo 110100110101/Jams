@@ -7,6 +7,7 @@
 
 import UIKit
 import RxSwift
+import DZNEmptyDataSet
 
 /**
  JamsViewController Restoration Keys! 
@@ -15,7 +16,7 @@ fileprivate enum JamsViewControllerRestorationKeys {
     static let searchBarValue = "searchBarValue"
 }
 
-class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, UISearchControllerDelegate, JamTableViewCellDelegate {
+class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate, UISearchControllerDelegate, JamTableViewCellDelegate, DZNEmptyDataSetSource {
     
     // MARK: - Outlets
     
@@ -170,6 +171,28 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
         }
     }
     
+    // MARK: - DZNEmptyDataSetSource Methods
+    
+    func customView(forEmptyDataSet scrollView: UIScrollView!) -> UIView! {
+        
+        let currentSearchPhrase = self.searchController.searchBar.text ?? ""
+        let hasEncounteredAnErrorWhileSearching = self.viewModel.hasEncounteredAnErrorWhileSearching.value
+        
+        if currentSearchPhrase.isEmpty && !hasEncounteredAnErrorWhileSearching {
+            
+            let emptyStateView = UINib(nibName: "JamsEmptyStateView", bundle: nil).instantiate(withOwner: nil, options: nil).first as? UIView
+            return emptyStateView
+        }
+        else if !currentSearchPhrase.isEmpty && !hasEncounteredAnErrorWhileSearching {
+            // TODO: Return Empty State, but with suggestions
+            return nil
+        }
+        else {
+            // TODO: Return error state
+            return nil
+        }
+    }
+    
     // MARK: - Private Methods
     
     private func initializeTableViewJamsProperties() {
@@ -179,6 +202,7 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
         
         self.tableViewJams.dataSource = self
         self.tableViewJams.delegate = self
+        self.tableViewJams.emptyDataSetSource = self
         self.tableViewJams.rowHeight = 116.0
     }
     
