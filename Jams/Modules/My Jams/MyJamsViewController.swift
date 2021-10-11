@@ -85,7 +85,8 @@ class MyJamsViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let detailsViewController = JamDetailsViewController()
+        let detailsViewModel = JamDetailsViewModel()
+        let detailsViewController = JamDetailsViewController(viewModel: detailsViewModel)
         self.navigationController?.pushViewController(detailsViewController, animated: true)
         
         tableView.deselectRow(at: indexPath, animated: true)

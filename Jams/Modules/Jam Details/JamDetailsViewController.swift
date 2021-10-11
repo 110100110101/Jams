@@ -16,6 +16,25 @@ class JamDetailsViewController: UIViewController {
     @IBOutlet private var labelGenre: UILabel!
     @IBOutlet private var labelLongDescription: UILabel!
     @IBOutlet private var buttonFavorite: UIButton!
+    
+    // MARK: - Fields
+    
+    private let viewModel: JamDetailsViewModel
+    
+    // MARK: - Initializers
+    
+    convenience init() {
+        fatalError("Use the designated initializer init(viewModel:)!")
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented, so use init(viewModel:)!")
+    }
+    
+    init(viewModel: JamDetailsViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
