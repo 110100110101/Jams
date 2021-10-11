@@ -40,6 +40,6 @@ extension FavoriteJam: Jammable {
     }
     
     var jamTrackPrice: Decimal? {
-        return self.trackPrice!.decimalValue
+        return self.trackPrice?.decimalValue
     }
 }
