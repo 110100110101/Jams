@@ -34,4 +34,12 @@ extension FavoriteJam: Jammable {
     var jamGenre: String {
         return self.genre!
     }
+    
+    var jamCurrency: String {
+        return self.currency!
+    }
+    
+    var jamTrackPrice: Decimal? {
+        return self.trackPrice!.decimalValue
+    }
 }
