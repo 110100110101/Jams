@@ -10,4 +10,5 @@ target 'Jams' do
   pod 'RxCocoa', '6.2.0'
   pod 'DZNEmptyDataSet', '1.8.1'
   pod 'Kingfisher', '7.0.0'
+  pod 'Avatar', '1.0.4'
 end
