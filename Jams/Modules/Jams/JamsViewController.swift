@@ -55,6 +55,9 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.restorationIdentifier = "JamsViewController"
+        self.restorationClass = JamsViewController.self
      
         self.navigationItem.title = "Jams"
         
@@ -74,7 +77,7 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
     override func encodeRestorableState(with coder: NSCoder) {
         super.encodeRestorableState(with: coder)
         
-        coder.encode(self.lastSearchedTerm, forKey: JamsViewControllerRestorationKeys.searchBarValue)
+        coder.encode(self.searchController.searchBar.text, forKey: JamsViewControllerRestorationKeys.searchBarValue)
     }
     
     override func decodeRestorableState(with coder: NSCoder) {
@@ -189,5 +192,17 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
                 self?.tableViewJams.reloadData()
             })
             .disposed(by: self.disposeBag)
+    }
+}
+
+extension JamsViewController: UIViewControllerRestoration {
+    
+    static func viewController(withRestorationIdentifierPath identifierComponents: [String], coder: NSCoder) -> UIViewController? {
+        
+        let jamsDataSource = JamsDataSource()
+        let jamsViewModel = JamsViewModel(dataSource: jamsDataSource)
+        let jamsViewController = JamsViewController(viewModel: jamsViewModel) // Restoration ID was set at nib
+        
+        return jamsViewController
     }
 }
