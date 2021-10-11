@@ -19,9 +19,9 @@ protocol MyJamsViewModelDataSource {
     func getAllFavoriteJams(completion: @escaping ([FavoriteJam]?, Error?) -> ())
     
     /**
-     Asks the data source to remove the jam on the list
+     Asks the data source to remove the jam from the favorite list
      */
-    func remove(jam: FavoriteJam)
+    func removeFavoriteJam(_ jam: FavoriteJam, completion: @escaping (Error?) -> ())
 }
 
 class MyJamsViewModel {

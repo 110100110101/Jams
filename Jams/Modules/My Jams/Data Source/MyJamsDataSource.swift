@@ -20,7 +20,7 @@ final class MyJamsDataSource: MyJamsViewModelDataSource {
         })
     }
     
-    func remove(jam: FavoriteJam) {
-        
+    func removeFavoriteJam(_ jam: FavoriteJam, completion: @escaping (Error?) -> ()) {
+        CoreDataManager.sharedInstance.deleteFavoriteJam(jam, completion: completion)
     }
 }
