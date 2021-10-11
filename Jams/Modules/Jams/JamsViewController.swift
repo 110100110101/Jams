@@ -113,7 +113,7 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
         let jam = self.viewModel.jams.value[indexPath.row]
         
         let detailsDataSource = JamDetailsDataSource()
-        let detailsViewModel = JamDetailsViewModel(jam: jam, isFavorite: true, dataSource: detailsDataSource)
+        let detailsViewModel = JamDetailsViewModel(jam: jam, isFavorite: false, dataSource: detailsDataSource)
         let detailsViewController = JamDetailsViewController(viewModel: detailsViewModel)
         self.navigationController?.pushViewController(detailsViewController, animated: true)
         
