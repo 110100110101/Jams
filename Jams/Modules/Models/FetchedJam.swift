@@ -28,7 +28,16 @@ class FetchedJam: Decodable {
         self.trackArtwork = try container.decode(URL.self, forKey: .trackArtwork)
         self.trackLongDescription = try container.decode(String.self, forKey: .trackLongDescription)
         self.genre = try container.decode(String.self, forKey: .genre)
-        self.isFavorite = false
+        self.isFavorite = false // The value of this field is resolve after successfully pulling the data
+    }
+    
+    init(trackId: Int64, trackName: String, trackArtwork: URL, trackLongDescription: String, genre: String, isFavorite: Bool) {
+        self.trackId = trackId
+        self.trackName = trackName
+        self.trackArtwork = trackArtwork
+        self.trackLongDescription = trackLongDescription
+        self.genre = genre
+        self.isFavorite = isFavorite
     }
     
     private enum CodingKeys: String, CodingKey {
