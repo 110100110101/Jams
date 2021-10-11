@@ -216,6 +216,17 @@ class JamsViewController: UIViewController, UISearchBarDelegate, UITableViewData
                 self?.tableViewJams.reloadData()
             })
             .disposed(by: self.disposeBag)
+        
+        // MARK: hasEncounteredAnErrorWhileSearching
+        
+        self.viewModel.hasEncounteredAnErrorWhileSearching
+            .asDriver()
+            .drive(onNext: { [weak self] (hasEncounteredAnErrorWhileSearching) in
+                if hasEncounteredAnErrorWhileSearching {
+                    self?.tableViewJams.reloadEmptyDataSet()
+                }
+            })
+            .disposed(by: self.disposeBag)
     }
 }
 
